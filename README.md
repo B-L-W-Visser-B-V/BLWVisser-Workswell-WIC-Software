@@ -3,16 +3,15 @@
   <a href="https://github.com/LucasHuls/ScrumGroep5"><img src="https://www.blwvisser.nl/wp-content/uploads/2020/09/logo.png" alt="Logo"></a>
 	<h1 align="center">BLWVISSER</h1>
 </p
-
-  <p align="center"><strong>Menu</strong></p>
-  <div align="center">
+<div align="center">
+  <p><strong>Menu</strong></p>
 	<br />
 	<a href="https://blwvisser.nl"><strong>Website »</strong></a>
 	<br />
 </div>
 <br>
-## Designs
 
+## Designs
 <a><img src="readme_files/Camera.png"></a><br>
 <h1>Camera's</h1>
 <a><img src="readme_files/Image.png"></a><br>
