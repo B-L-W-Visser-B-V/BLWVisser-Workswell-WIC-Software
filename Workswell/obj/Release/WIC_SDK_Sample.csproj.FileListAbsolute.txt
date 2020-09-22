@@ -1,0 +1,74 @@
+C:\Users\ljhul\Desktop\SDK\Sample\obj\Release\View\ProgressWindow.baml
+C:\Users\ljhul\Desktop\SDK\Sample\obj\Release\View\InfoTab.g.cs
+C:\Users\ljhul\Desktop\SDK\Sample\obj\Release\View\CameraTab.g.cs
+C:\Users\ljhul\Desktop\SDK\Sample\obj\Release\View\MainWindow.g.cs
+C:\Users\ljhul\Desktop\SDK\Sample\obj\Release\View\ProgressWindow.g.cs
+C:\Users\ljhul\Desktop\SDK\Sample\obj\Release\View\ThermalImageTab.g.cs
+C:\Users\ljhul\Desktop\SDK\Sample\obj\Release\View\ThermalSequencePlayerTab.g.cs
+C:\Users\ljhul\Desktop\SDK\Sample\obj\Release\App.g.cs
+C:\Users\ljhul\Desktop\SDK\Sample\obj\Release\GeneratedInternalTypeHelper.g.cs
+C:\Users\ljhul\Desktop\SDK\Sample\bin\Release\Multimedia.dll
+C:\Users\ljhul\Desktop\SDK\Sample\bin\Release\PvDotNet.dll
+C:\Users\ljhul\Desktop\SDK\Sample\bin\Release\ThermoLib.dll
+C:\Users\ljhul\Desktop\SDK\Sample\bin\Release\WIC_SDK.dll
+C:\Users\ljhul\Desktop\SDK\Sample\obj\Release\App.baml
+C:\Users\ljhul\Desktop\SDK\Sample\obj\Release\View\InfoTab.baml
+C:\Users\ljhul\Desktop\SDK\Sample\obj\Release\View\CameraTab.baml
+C:\Users\ljhul\Desktop\SDK\Sample\obj\Release\View\MainWindow.baml
+C:\Users\ljhul\Desktop\SDK\Sample\obj\Release\View\ThermalImageTab.baml
+C:\Users\ljhul\Desktop\SDK\Sample\obj\Release\View\ThermalSequencePlayerTab.baml
+C:\Users\ljhul\Desktop\SDK\Sample\obj\Release\WIC_SDK_Sample.Properties.Resources.resources
+C:\Users\ljhul\Desktop\SDK\Sample\obj\Release\WIC_SDK_Sample.csproj.GenerateResource.cache
+C:\Users\ljhul\Desktop\SDK\Sample\obj\Release\WIC_SDK_Sample.csproj.CoreCompileInputs.cache
+C:\Users\ljhul\Desktop\SDK\Sample\obj\Release\WIC_SDK_Sample.csproj.CopyComplete
+C:\Users\ljhul\Desktop\SDK\Sample\bin\Release\BLWVisser Workswell.exe.config
+C:\Users\ljhul\Desktop\SDK\Sample\bin\Release\BLWVisser Workswell.exe
+C:\Users\ljhul\Desktop\SDK\Sample\bin\Release\BLWVisser Workswell.pdb
+C:\Users\ljhul\Desktop\SDK\Sample\obj\Release\BLWVisser Workswell_Content.g.cs
+C:\Users\ljhul\Desktop\SDK\Sample\obj\Release\BLWVisser Workswell_MarkupCompile.cache
+C:\Users\ljhul\Desktop\SDK\Sample\obj\Release\BLWVisser Workswell_MarkupCompile.lref
+C:\Users\ljhul\Desktop\SDK\Sample\obj\Release\BLWVisser Workswell.g.resources
+C:\Users\ljhul\Desktop\SDK\Sample\obj\Release\BLWVisser Workswell.exe
+C:\Users\ljhul\Desktop\SDK\Sample\obj\Release\BLWVisser Workswell.pdb
+C:\Users\ljhul\Desktop\SDK\Sample\obj\Release\WIC_SDK_Sample.csprojAssemblyReference.cache
+C:\Users\ljhul\Desktop\SDK\Sample\bin\Release\BLWVisser Workswell.exe.manifest
+C:\Users\ljhul\Desktop\SDK\Sample\bin\Release\BLWVisser Workswell.application
+C:\Users\ljhul\Desktop\SDK\Sample\obj\Release\BLWVisser Workswell.exe.manifest
+C:\Users\ljhul\Desktop\SDK\Sample\obj\Release\BLWVisser Workswell.application
+C:\Users\ljhul\Desktop\SDK\blwvisser\Workswell\bin\Release\BLWVisser Workswell.exe.config
+C:\Users\ljhul\Desktop\SDK\blwvisser\Workswell\bin\Release\BLWVisser Workswell.exe.manifest
+C:\Users\ljhul\Desktop\SDK\blwvisser\Workswell\bin\Release\BLWVisser Workswell.application
+C:\Users\ljhul\Desktop\SDK\blwvisser\Workswell\bin\Release\BLWVisser Workswell.exe
+C:\Users\ljhul\Desktop\SDK\blwvisser\Workswell\bin\Release\BLWVisser Workswell.pdb
+C:\Users\ljhul\Desktop\SDK\blwvisser\Workswell\bin\Release\Multimedia.dll
+C:\Users\ljhul\Desktop\SDK\blwvisser\Workswell\bin\Release\PvDotNet.dll
+C:\Users\ljhul\Desktop\SDK\blwvisser\Workswell\bin\Release\ThermoLib.dll
+C:\Users\ljhul\Desktop\SDK\blwvisser\Workswell\bin\Release\WIC_SDK.dll
+C:\Users\ljhul\Desktop\SDK\blwvisser\Workswell\obj\Release\WIC_SDK_Sample.csprojAssemblyReference.cache
+C:\Users\ljhul\Desktop\SDK\blwvisser\Workswell\obj\Release\View\ProgressWindow.baml
+C:\Users\ljhul\Desktop\SDK\blwvisser\Workswell\obj\Release\View\InfoTab.g.cs
+C:\Users\ljhul\Desktop\SDK\blwvisser\Workswell\obj\Release\View\CameraTab.g.cs
+C:\Users\ljhul\Desktop\SDK\blwvisser\Workswell\obj\Release\View\MainWindow.g.cs
+C:\Users\ljhul\Desktop\SDK\blwvisser\Workswell\obj\Release\View\ProgressWindow.g.cs
+C:\Users\ljhul\Desktop\SDK\blwvisser\Workswell\obj\Release\View\ThermalImageTab.g.cs
+C:\Users\ljhul\Desktop\SDK\blwvisser\Workswell\obj\Release\View\ThermalSequencePlayerTab.g.cs
+C:\Users\ljhul\Desktop\SDK\blwvisser\Workswell\obj\Release\App.g.cs
+C:\Users\ljhul\Desktop\SDK\blwvisser\Workswell\obj\Release\BLWVisser Workswell_Content.g.cs
+C:\Users\ljhul\Desktop\SDK\blwvisser\Workswell\obj\Release\GeneratedInternalTypeHelper.g.cs
+C:\Users\ljhul\Desktop\SDK\blwvisser\Workswell\obj\Release\BLWVisser Workswell_MarkupCompile.cache
+C:\Users\ljhul\Desktop\SDK\blwvisser\Workswell\obj\Release\BLWVisser Workswell_MarkupCompile.lref
+C:\Users\ljhul\Desktop\SDK\blwvisser\Workswell\obj\Release\App.baml
+C:\Users\ljhul\Desktop\SDK\blwvisser\Workswell\obj\Release\View\InfoTab.baml
+C:\Users\ljhul\Desktop\SDK\blwvisser\Workswell\obj\Release\View\CameraTab.baml
+C:\Users\ljhul\Desktop\SDK\blwvisser\Workswell\obj\Release\View\MainWindow.baml
+C:\Users\ljhul\Desktop\SDK\blwvisser\Workswell\obj\Release\View\ThermalImageTab.baml
+C:\Users\ljhul\Desktop\SDK\blwvisser\Workswell\obj\Release\View\ThermalSequencePlayerTab.baml
+C:\Users\ljhul\Desktop\SDK\blwvisser\Workswell\obj\Release\BLWVisser Workswell.g.resources
+C:\Users\ljhul\Desktop\SDK\blwvisser\Workswell\obj\Release\WIC_SDK_Sample.Properties.Resources.resources
+C:\Users\ljhul\Desktop\SDK\blwvisser\Workswell\obj\Release\WIC_SDK_Sample.csproj.GenerateResource.cache
+C:\Users\ljhul\Desktop\SDK\blwvisser\Workswell\obj\Release\WIC_SDK_Sample.csproj.CoreCompileInputs.cache
+C:\Users\ljhul\Desktop\SDK\blwvisser\Workswell\obj\Release\BLWVisser Workswell.exe.manifest
+C:\Users\ljhul\Desktop\SDK\blwvisser\Workswell\obj\Release\BLWVisser Workswell.application
+C:\Users\ljhul\Desktop\SDK\blwvisser\Workswell\obj\Release\WIC_SDK_Sample.csproj.CopyComplete
+C:\Users\ljhul\Desktop\SDK\blwvisser\Workswell\obj\Release\BLWVisser Workswell.exe
+C:\Users\ljhul\Desktop\SDK\blwvisser\Workswell\obj\Release\BLWVisser Workswell.pdb

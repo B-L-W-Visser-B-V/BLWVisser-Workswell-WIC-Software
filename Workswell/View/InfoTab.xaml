@@ -1,0 +1,36 @@
+﻿<UserControl x:Class="WIC_SDK_Sample.View.InfoTab"
+           xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="clr-namespace:WIC_SDK_Sample.ViewModel"
+        xmlns:sdk="clr-namespace:WIC_SDK;assembly=WIC_SDK"
+        xmlns:convs="clr-namespace:WIC_SDK_Sample.Utils"
+        DataContext="{DynamicResource ApplicationViewModel}" Height="526.8" Width="1101.2"
+             >
+    <UserControl.Resources>
+        <vm:ApplicationViewModel x:Key="ApplicationViewModel"/>
+        <convs:BoolToVisibilityConverter x:Key="BoolToVisConverter" TrueValue="Visible" FalseValue="Collapsed" />
+        <convs:BoolToBoolConverter x:Key="OppositeBoolConv" TrueValue="False" FalseValue="True" />
+        <Style TargetType="Button">
+            <Setter Property="Margin" Value="4"/>
+            <Setter Property="VerticalAlignment" Value="Top"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="Width" Value="90"/>
+            <Setter Property="Height" Value="23"/>
+        </Style>
+        <Style TargetType="TextBlock">
+            <Setter Property="Margin" Value="4"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="HorizontalAlignment" Value="Left"/>
+
+        </Style>
+    </UserControl.Resources>
+    <Grid x:Name="website_button" HorizontalAlignment="Left" Margin="10,10,0,9.4" Width="1081">
+        <Image HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Source="BLW Visser Orange sinds scherp.png" Height="56" Width="224"/>
+        <Label Content="www.blwvisser.nl" HorizontalAlignment="Left" Margin="10,147,0,0" VerticalAlignment="Top" FontSize="20"/>
+        <Label Content="BLWVisser B.V." HorizontalAlignment="Left" Margin="10,110,0,0" VerticalAlignment="Top" FontSize="20"/>
+        <Label Content="Cromhoffsbleekweg 146" HorizontalAlignment="Left" Margin="10,184,0,0" VerticalAlignment="Top" FontSize="20"/>
+        <Label Content="7513 EW Enschede" HorizontalAlignment="Left" Margin="10,221,0,0" VerticalAlignment="Top" FontSize="20"/>
+        <Label Content="+31 053 431 9661" HorizontalAlignment="Left" Margin="10,258,0,0" VerticalAlignment="Top" FontSize="20"/>
+        <Button Content="Website" HorizontalAlignment="Left" Margin="207,147,0,0" VerticalAlignment="Top" Width="75" Height="37" Click="Button_Click"/>
+    </Grid>
+</UserControl>
