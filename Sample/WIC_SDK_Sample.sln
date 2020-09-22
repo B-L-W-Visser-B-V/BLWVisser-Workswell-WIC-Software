@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30503.244
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WIC_SDK_Sample", "WIC_SDK_Sample.csproj", "{48D04D21-6289-4F83-929B-ED83B010E6AD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{48D04D21-6289-4F83-929B-ED83B010E6AD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{48D04D21-6289-4F83-929B-ED83B010E6AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{48D04D21-6289-4F83-929B-ED83B010E6AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{48D04D21-6289-4F83-929B-ED83B010E6AD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {086C1BE7-87DB-458A-A57B-6B47C2F2B73C}
+	EndGlobalSection
+EndGlobal

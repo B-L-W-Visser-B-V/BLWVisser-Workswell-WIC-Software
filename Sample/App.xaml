@@ -1,0 +1,14 @@
+﻿<Application x:Class="WIC_SDK_Sample.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:VMs="clr-namespace:WIC_SDK_Sample.ViewModel"
+             StartupUri="View/MainWindow.xaml"
+             DispatcherUnhandledException="Application_DispatcherUnhandledException"
+             ShutdownMode="OnMainWindowClose">
+
+    <Application.Resources>
+        <ResourceDictionary>
+            <VMs:ApplicationViewModel x:Key="MainViewModel"/>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

@@ -1,0 +1,311 @@
+﻿<UserControl x:Class="WIC_SDK_Sample.View.ThermalSequencePlayerTab"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="clr-namespace:WIC_SDK_Sample.ViewModel"
+        xmlns:convs="clr-namespace:WIC_SDK_Sample.Utils"
+        DataContext="{DynamicResource ApplicationViewModel}">
+
+    <UserControl.Resources>
+        <vm:ApplicationViewModel x:Key="ApplicationViewModel"/>
+        <convs:BoolToVisibilityConverter x:Key="BoolToVisConverter" TrueValue="Visible" FalseValue="Collapsed" />
+        <Style TargetType="Button">
+            <Setter Property="Margin" Value="5"/>
+            <Setter Property="VerticalAlignment" Value="Top"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+        </Style>
+    </UserControl.Resources>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition />
+        </Grid.RowDefinitions>
+
+        <StackPanel
+                Grid.Row="0"
+                Orientation="Horizontal"
+                HorizontalAlignment="Center">
+            <Button
+                    Content="Open"
+                    Command="{Binding ThermalSequencePlayerVM.OpenThermalSequenceCommand}"
+                    Width="70"
+                    Margin="10,20,10,2"/>
+            <Button
+                    Content="Close"
+                    Command="{Binding ThermalSequencePlayerVM.CloseThermalSequenceCommand}"
+                    Width="70"
+                    Margin="10,20,10,2"/>
+        </StackPanel>
+
+        <Grid VerticalAlignment="Top"
+                HorizontalAlignment="Left"
+                Margin="10"
+                Grid.Row="1"
+                Grid.Column="0">
+            <Grid.Resources>
+                <Style TargetType="TextBlock">
+                    <Setter Property="Margin" Value="10,5"/>
+                </Style>
+                <Style TargetType="TextBox">
+                    <Setter Property="Margin" Value="1"/>
+                    <Setter Property="Height" Value="20"/>
+                </Style>
+            </Grid.Resources>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="30"/>
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+
+            <TextBlock Grid.Row="0" Grid.ColumnSpan="2" Text="Thermal sequence info" FontWeight="Bold"/>
+            <Border Grid.Row="0" Grid.ColumnSpan="2" BorderThickness="0,0,0,1" BorderBrush="Black"/>
+            <TextBlock Grid.Row="1" Text="Manufacturer"/>
+            <TextBlock Grid.Row="1" Grid.Column="1" Text="{Binding ThermalSequencePlayerVM.ManufacturerInfo, FallbackValue='--', TargetNullValue='--'}"/>
+            <TextBlock Text="Model" Grid.Row="2"/>
+            <TextBlock Grid.Row="2" Grid.Column="1" Text="{Binding ThermalSequencePlayerVM.ModelName, FallbackValue='--', TargetNullValue='--'}"/>
+            <TextBlock Text="Name" Grid.Row="3"/>
+            <TextBlock Grid.Row="3" Grid.Column="1" Text="{Binding ThermalSequencePlayerVM.UserDefinedName, FallbackValue='--', TargetNullValue='--'}"/>
+            <TextBlock Text="Serial number" Grid.Row="4"/>
+            <TextBlock Grid.Row="4" Grid.Column="1" Text="{Binding ThermalSequencePlayerVM.SerialNumber, FallbackValue='--', TargetNullValue='--'}"/>
+            <TextBlock Grid.Row="5" Text="Emissivity" VerticalAlignment="Center"/>
+            <StackPanel Grid.Column="1" Margin="0,5,0,0" Grid.Row="5" Orientation="Horizontal">
+                
+                <TextBox Width="45" 
+                         Name="EmissivityInput" 
+                         HorizontalAlignment="Center"
+                         Text="{Binding ThermalSequencePlayerVM.Emisivity, FallbackValue=0, StringFormat='{}{0:0.00}'}">
+                </TextBox>
+                <TextBlock Text="" />
+            </StackPanel>
+            <TextBlock Grid.Row="6" 
+                       Text="Reflected temperature"
+                       VerticalAlignment="Center"/>
+            <StackPanel Grid.Column="1"
+                        Margin="0,5,0,0"
+                        Grid.Row="6"
+                        Orientation="Horizontal">
+                <TextBox Width="45" 
+                    Name="ReflectedTemperatureInput" 
+                    HorizontalAlignment="Center" Text="{Binding ThermalSequencePlayerVM.ReflectedTemperature, FallbackValue=0, StringFormat='{}{0:0.0}'}">
+                </TextBox>
+                <TextBlock Text="°C"/>
+            </StackPanel>
+            <TextBlock Grid.Row="7" 
+                        Text="Atmospheric temp."
+                        VerticalAlignment="Center"/>
+            <StackPanel Grid.Column="1" 
+                        Margin="0,5,0,0"
+                        Grid.Row="7" 
+                        Orientation="Horizontal">
+                <TextBox 
+                        Width="45"
+                        HorizontalAlignment="Center"
+                        Name="AtmosphericTemperatureInput"
+                        Text="{Binding ThermalSequencePlayerVM.AtmosphericTemperature, FallbackValue=0, StringFormat='{}{0:0.0}'}"/>
+                <TextBlock Text="°C"/>
+            </StackPanel>
+            <TextBlock Grid.Row="8" 
+                        Text="Humidity"
+                        VerticalAlignment="Center"/>
+            <StackPanel Grid.Column="1" 
+                        Margin="0,5,0,0"
+                        Grid.Row="8"
+                        Orientation="Horizontal">
+                <TextBox
+                        Width="45"
+                        Name="HumidityInput"
+                        HorizontalAlignment="Center"
+                        Text="{Binding ThermalSequencePlayerVM.Humidity, FallbackValue=0, StringFormat='{}{0:0.0}'}"/>
+                <TextBlock Text="%"/>
+            </StackPanel>
+            <TextBlock Grid.Row="9" 
+                        Text="Distance"
+                        VerticalAlignment="Center"/>
+            <StackPanel Grid.Column="1"
+                        Margin="0,5,0,0"
+                        Grid.Row="9" 
+                        Orientation="Horizontal">
+                <TextBox Width="45"
+                         Name="DistanceInput"
+                         HorizontalAlignment="Center"
+                         Text="{Binding ThermalSequencePlayerVM.Distance, FallbackValue=0, StringFormat='{}{0:0.0}'}"/>
+                <TextBlock Text="m"/>
+            </StackPanel>
+            <TextBlock Grid.Row="10"
+                       Text="Max temperature"
+                       VerticalAlignment="Center"/>
+            <StackPanel Grid.Column="1"
+                        Margin="0,5,0,0"
+                        Grid.Row="10" 
+                        Orientation="Horizontal">
+                <TextBlock Grid.Row="8"
+                           Grid.Column="1"
+                           Text="{Binding ThermalSequencePlayerVM.MaxTemperature, FallbackValue=0, StringFormat='{}{0:0.0}°C'}"/>
+            </StackPanel>
+            <TextBlock Grid.Row="11"
+                       Text="Min temperature"
+                       VerticalAlignment="Center"/>
+            <StackPanel Grid.Column="1"
+                        Margin="0,5,0,0"
+                        Grid.Row="11" 
+                        Orientation="Horizontal">
+                <TextBlock Grid.Row="9"
+                           Grid.Column="1"
+                           Text="{Binding ThermalSequencePlayerVM.MinTemperature, FallbackValue=0, StringFormat='{}{0:0.0}°C'}"/>
+            </StackPanel>
+            <TextBlock Grid.Row="12"
+                       Text="Min Signal value"
+                       VerticalAlignment="Center"/>
+            <StackPanel Grid.Column="1"
+                        Margin="0,5,0,0"
+                        Grid.Row="12" 
+                        Orientation="Horizontal">
+                <TextBlock Grid.Row="9"
+                           Grid.Column="1"
+                           Text="{Binding ThermalSequencePlayerVM.MinSignalValue, FallbackValue=0, StringFormat='{}{0:0.0}'}"/>
+            </StackPanel>
+            <TextBlock Grid.Row="13"
+                       Text="Max Signal value"
+                       VerticalAlignment="Center"/>
+            <StackPanel Grid.Column="1"
+                        Margin="0,5,0,0"
+                        Grid.Row="13" 
+                        Orientation="Horizontal">
+                <TextBlock Grid.Row="9"
+                           Grid.Column="1"
+                           Text="{Binding ThermalSequencePlayerVM.MaxSignalValue, FallbackValue=0, StringFormat='{}{0:0.0}'}"/>
+            </StackPanel>
+            <TextBlock Grid.Row="14"
+                       Text="Palette"
+                       VerticalAlignment="Center"/>
+            <ComboBox 
+                    Name="PaletteComboBox"
+                    ItemsSource="{Binding ThermalSequencePlayerVM.AvailablePalettes}"
+                    SelectedItem="{Binding ThermalSequencePlayerVM.SelectedPalette}"
+                    Grid.Row="14"
+                    Grid.Column="1"
+                    Margin="0,5,0,0" 
+                    HorizontalAlignment="Left" 
+                    VerticalAlignment="Center" >
+            </ComboBox>
+            <TextBlock Grid.Row="15"
+                       Text="Computation mode"
+                       VerticalAlignment="Center"/>
+            <ComboBox 
+                    Name="ModeComboBox"
+                    ItemsSource="{Binding ThermalSequencePlayerVM.AvailableModes}"
+                    SelectedItem="{Binding ThermalSequencePlayerVM.SelectedMode}"
+                    Grid.Row="15"
+                    Grid.Column="1"
+                    Margin="0,5,0,0" 
+                    HorizontalAlignment="Left" 
+                    VerticalAlignment="Center" >
+            </ComboBox>
+        </Grid>
+
+        <Grid Grid.Row="0"
+              Grid.RowSpan="2"
+              Grid.Column="1"
+              >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="30"/>
+            </Grid.RowDefinitions>
+            <Image Source="{Binding ThermalSequencePlayerVM.ThermalSequenceImageSource}" 
+                   Grid.Row="0" 
+                   Grid.Column="1" 
+                   Grid.RowSpan="2" 
+                   Margin="0,0,0,30"/>
+            <Grid Grid.Row="1" 
+                  VerticalAlignment="Center" 
+                  HorizontalAlignment="Stretch"
+                  Visibility="Visible">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <Button
+                    Content="Play"
+                    Command="{Binding ThermalSequencePlayerVM.PlaySequenceImageCommand}"
+                    Grid.Column="0"
+                    VerticalAlignment="Center"
+                    Width="30"/>
+                <Button
+                    Content="Stop"
+                    Command="{Binding ThermalSequencePlayerVM.StopSequenceImageCommand}"
+                    Grid.Column="1"
+                    VerticalAlignment="Center"
+                    Width="30"/>
+                <Button
+                    Content="Next"
+                    Command="{Binding ThermalSequencePlayerVM.NextSequenceImageCommand}"
+                    Grid.Column="2"
+                    VerticalAlignment="Center"
+                    Width="30"/>
+                <Button
+                    Content="Prev"
+                    Command="{Binding ThermalSequencePlayerVM.PrevSequenceImageCommand}"
+                    Grid.Column="3"
+                    VerticalAlignment="Center"
+                    Width="30"/>
+
+                <TextBlock Text="{Binding  ThermalSequencePlayerVM.CurrentTime,StringFormat='{}{0:mm}:{0:ss},{0:fff}',FallbackValue='00:00,000'}"
+                           Grid.Column="4" 
+                           Margin="2"
+                           VerticalAlignment="Center"/>
+
+                <Slider  HorizontalAlignment="Stretch" 
+                         HorizontalContentAlignment="Stretch" 
+                         Grid.Column="5"
+                         LargeChange="10" 
+                         SmallChange="1"
+                         IsMoveToPointEnabled="True"
+                         TickFrequency="10"
+                         TickPlacement="None"
+                         VerticalAlignment="Center"
+                         Margin="2"
+                         Minimum="0"
+                         Maximum="{Binding ThermalSequencePlayerVM.FrameCount,TargetNullValue=100}"
+                         Value="{Binding ThermalSequencePlayerVM.CurrentFrameIndex}"/>
+
+                <TextBlock Text="{Binding  ThermalSequencePlayerVM.EndTime,StringFormat='{}{0:mm}:{0:ss},{0:fff}',FallbackValue='00:00,000'}" 
+                           Grid.Column="6"
+                           Margin="2"
+                           VerticalAlignment="Center"/>
+
+                <CheckBox Content="Loop" IsChecked="{Binding ThermalSequencePlayerVM.Loop}" 
+                          Grid.Column="7"
+                          Margin="5,2"
+                          VerticalAlignment="Center"/>
+            </Grid>
+        </Grid>
+    </Grid>
+</UserControl>
