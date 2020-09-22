@@ -11,13 +11,18 @@
 	<br />
 	<a href="https://blwvisser.nl"><strong>Website »</strong></a>
 	<br />
+  </p>
 
 ## Designs
 
+<a><img src="readme_files/Camera.png"></a><br>
+<p>Camera's</p>
+<a><img src="readme_files/Image.png"></a><br>
+<p>Image</p>
 <a><img src="readme_files/player.png"></a>
+<p>Player</p>
 <a><img src="readme_files/info.png"></a>
-<a><img src="readme_files/Image.png"></a>
-<a><img src="readme_files/Camera.png"></a>
+<p>Info</p>
 
 ## Contact
 <br>
