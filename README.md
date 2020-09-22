@@ -4,11 +4,13 @@
 	<h1 align="center">BLWVISSER</h1>
 </p
 
-  <p align="center"><strong>Menu</strong>
+  <p align="center"><strong>Menu</strong></p>
+  <div align="center">
 	<br />
 	<a href="https://blwvisser.nl"><strong>Website »</strong></a>
 	<br />
-</p>
+</div>
+<br>
 ## Designs
 
 <a><img src="readme_files/Camera.png"></a><br>
