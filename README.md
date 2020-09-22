@@ -14,7 +14,10 @@
 
 ## Designs
 
-<a><img src="readme_files/player.png"</a>
+<a><img src="readme_files/player.png"></a>
+<a><img src="readme_files/info.png"></a>
+<a><img src="readme_files/Image.png"></a>
+<a><img src="readme_files/Camera.png"></a>
 
 ## Contact
 <br>
