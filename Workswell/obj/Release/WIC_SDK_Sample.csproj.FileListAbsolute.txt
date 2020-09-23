@@ -72,3 +72,5 @@ C:\Users\ljhul\Desktop\SDK\blwvisser\Workswell\obj\Release\BLWVisser Workswell.a
 C:\Users\ljhul\Desktop\SDK\blwvisser\Workswell\obj\Release\WIC_SDK_Sample.csproj.CopyComplete
 C:\Users\ljhul\Desktop\SDK\blwvisser\Workswell\obj\Release\BLWVisser Workswell.exe
 C:\Users\ljhul\Desktop\SDK\blwvisser\Workswell\obj\Release\BLWVisser Workswell.pdb
+C:\Users\ljhul\Desktop\SDK\blwvisser\Workswell\obj\Release\View\SplashScreen.g.cs
+C:\Users\ljhul\Desktop\SDK\blwvisser\Workswell\obj\Release\View\SplashScreen.baml

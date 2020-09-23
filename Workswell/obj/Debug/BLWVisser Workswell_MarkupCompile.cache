@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\ljhul\Desktop\SDK\blwvisser\Workswell\App.xaml
-6213517267
+71811853628
 3-1662167436
-181922927633
+19663272995
 18482801509
-View\InfoTab.xaml;View\CameraTab.xaml;View\MainWindow.xaml;View\ProgressWindow.xaml;View\ThermalImageTab.xaml;View\ThermalSequencePlayerTab.xaml;
+View\InfoTab.xaml;View\CameraTab.xaml;View\MainWindow.xaml;View\ProgressWindow.xaml;View\SplashScreen.xaml;View\ThermalImageTab.xaml;View\ThermalSequencePlayerTab.xaml;
 
-True
+False
 

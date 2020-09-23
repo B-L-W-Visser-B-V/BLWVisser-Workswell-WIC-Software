@@ -390,6 +390,6 @@
                     Source="{Binding CameraCenterVM.SelectedCamera.ThermalImage}" ClipToBounds="True"
                     />
         </Grid>
-        <Image HorizontalAlignment="Center" Height="100" Margin="321.4,464,-35,0" Width="216" Source="BLW Visser Orange sinds scherp.png" AutomationProperties.Name="Test" VerticalAlignment="Top" Grid.Column="2"/>
+        <Image HorizontalAlignment="Center" Height="64" Margin="352.4,466,18,0" Width="216" Source="BLW Visser Orange sinds scherp.png" AutomationProperties.Name="Test" VerticalAlignment="Top" Grid.Column="2"/>
     </Grid>
 </UserControl>

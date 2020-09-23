@@ -1,0 +1,14 @@
+﻿<Window x:Class="WIC_SDK_Sample.View.SplashScreen"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WIC_SDK_Sample.View"
+        mc:Ignorable="d"
+        Title="BLWVisser" Height="602" Width="1127.8" WindowStartupLocation="CenterScreen" ContentRendered="Window_ContentRendered">
+    <Grid>
+        <Image HorizontalAlignment="Left" Height="110" Margin="409,109,0,0" VerticalAlignment="Top" Width="410" Source="BLW Visser Orange sinds scherp.png" ClipToBounds="True"/>
+        <ProgressBar x:Name="pbStatus" Minimum="0" Maximum="100" HorizontalAlignment="Left" Height="32" Margin="357,295,0,0" VerticalAlignment="Top" Width="514"/>
+        <Image HorizontalAlignment="Left" Height="64" Margin="509,219,0,0" VerticalAlignment="Top" Width="210" Source="Workswell-logo-with-slogan-840x180-1.png" RenderTransformOrigin="0.282,0.406"/>
+    </Grid>
+</Window>

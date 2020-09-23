@@ -72,7 +72,7 @@ namespace WIC_SDK_Sample.ViewModel
         }
 
 
-        #region Settings & Info
+        #region Settings & 
 
         //Manufacturer info
         public string ManufacturerInfo
