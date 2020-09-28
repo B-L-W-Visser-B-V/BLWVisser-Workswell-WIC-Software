@@ -20,7 +20,7 @@ namespace WIC_SDK_Sample.ViewModel
 
         public CameraCenterViewModel()
         {
-            string pathToLicences = "C:\\";
+            string pathToLicences = @"C:\blwvisser";
 
             if (pathToLicences != "")
             {
@@ -113,7 +113,7 @@ namespace WIC_SDK_Sample.ViewModel
                 return cameraCenter.IsRefreshing;
             }
         }
-        private bool isRefreshing = false;
+        public bool isRefreshing = false;
 
         // Command for clearing cameras in observable collection and again finds the cameras subsequently added to Cameras collection
         public ICommand RefreshCommand { get { return new RelayCommand(RefreshCommandExecute, CanRefreshCommandExecute); } }

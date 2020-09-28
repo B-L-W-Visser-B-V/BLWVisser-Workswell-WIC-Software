@@ -225,8 +225,7 @@ namespace WIC_SDK_Sample.ViewModel
         {
             get
             {
-                string manufacturer = thermalImage.Manufacturer;
-                return manufacturer;
+                return thermalImage.Manufacturer;
             }
         }
 

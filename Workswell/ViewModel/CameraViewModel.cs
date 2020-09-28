@@ -405,6 +405,22 @@ namespace WIC_SDK_Sample.ViewModel
         }
         private BitmapSource thermalImage;
 
+        // Bitmap source for Image2
+        public BitmapSource ThermalImage2
+        {
+            get
+            {
+                if (!IsAcquiring) return null;
+                return camera.ThermoImageSource;
+            }
+            set
+            {
+                thermalImage2 = value;
+                RaisePropertyChanged("ThermalImage2");
+            }
+        }
+        private BitmapSource thermalImage2;
+
         private ObservableCollection<string> availablePalettes = new ObservableCollection<string>() { Camera.AvailablePalettes.BlackRed.ToString(),
             Camera.AvailablePalettes.BlueRed.ToString(),
             Camera.AvailablePalettes.BWRGB.ToString(),
@@ -656,6 +672,7 @@ namespace WIC_SDK_Sample.ViewModel
             RaisePropertyChanged("ThermoImageSource");
             RaisePropertyChanged("Status");
         }
+
 
         // Stop acquisition command for binding from view
         // Stop acquisition of the selected camera

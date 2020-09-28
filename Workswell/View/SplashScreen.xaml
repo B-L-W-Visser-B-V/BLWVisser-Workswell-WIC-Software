@@ -5,10 +5,16 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WIC_SDK_Sample.View"
         mc:Ignorable="d"
-        Title="BLWVisser" Height="602" Width="1127.8" WindowStartupLocation="CenterScreen" ContentRendered="Window_ContentRendered">
+        Title="BLWVisser" WindowStyle="None" WindowState="Maximized">
     <Grid>
-        <Image HorizontalAlignment="Left" Height="110" Margin="409,109,0,0" VerticalAlignment="Top" Width="410" Source="BLW Visser Orange sinds scherp.png" ClipToBounds="True"/>
-        <ProgressBar x:Name="pbStatus" Minimum="0" Maximum="100" HorizontalAlignment="Left" Height="32" Margin="357,295,0,0" VerticalAlignment="Top" Width="514"/>
-        <Image HorizontalAlignment="Left" Height="64" Margin="509,219,0,0" VerticalAlignment="Top" Width="210" Source="Workswell-logo-with-slogan-840x180-1.png" RenderTransformOrigin="0.282,0.406"/>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="318*"/>
+            <RowDefinition Height="53*"/>
+            <RowDefinition Height="78*"/>
+            <RowDefinition Height="81*"/>
+        </Grid.RowDefinitions>
+        <Image HorizontalAlignment="Center" Width="410" Source="BLW Visser Orange sinds scherp.png" ClipToBounds="True"/>
+        <ProgressBar x:Name="laad" Minimum="0" Maximum="100" Height="32" Width="514" VerticalAlignment="Bottom" HorizontalAlignment="Center" Grid.Row="2"/>
+        <Image Height="64" Width="210" Source="Workswell-logo-with-slogan-840x180-1.png" RenderTransformOrigin="0.282,0.406" HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Row="1" Grid.RowSpan="2"/>
     </Grid>
 </Window>

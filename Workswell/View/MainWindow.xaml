@@ -4,9 +4,8 @@
         xmlns:m="clr-namespace:WIC_SDK_Sample.View"
         xmlns:convs="clr-namespace:WIC_SDK_Sample.Utils"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d" x:Class="WIC_SDK_Sample.View.MainWindow"
-        Title="BLWVisser - SAFETIS Workswell"
-        DataContext="{DynamicResource MainViewModel}"
-        Closed="Window_Closed" Icon="icoon.png" Height="602" Width="1127.8" WindowStartupLocation="CenterScreen">
+        Title="BLWVisser" WindowStyle="None" WindowState="Maximized"
+        DataContext="{DynamicResource MainViewModel}" Icon="icoon.png">
     <Window.Resources>
         <convs:BoolToVisibilityConverter x:Key="BoolToVisConverter" TrueValue="Visible" FalseValue="Collapsed" />
         <Style TargetType="{x:Type Button}">
@@ -22,7 +21,7 @@
         </Grid.ColumnDefinitions>
         <TabControl Grid.ColumnSpan="2" Margin="0,0,-0.4,0">
             <TabItem Header="Camera">
-                <m:CameraTab/>
+                <m:CameraTab x:Name="CameraTab"/>
             </TabItem>
             <TabItem Header="Image">
                 <m:ThermalImageTab/>

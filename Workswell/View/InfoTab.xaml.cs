@@ -1,5 +1,7 @@
 ﻿using System.Diagnostics;
 using System.Net.NetworkInformation;
+using System.Security.Principal;
+using System.Windows;
 using System.Windows.Controls;
 
 namespace WIC_SDK_Sample.View
@@ -34,13 +36,17 @@ namespace WIC_SDK_Sample.View
 
             if (r.Status == IPStatus.Success)
             {
-                Resultaat.Text = s.ToString() + " is online! ";
+                string Resultaat = s.ToString() + " is bereikbaar! ";
+                MessageBox.Show(Resultaat, "Online!");
             }
             if (r.Status == IPStatus.TimedOut)
             {
-                Resultaat.Text = s.ToString() + "is offline! ";
+                string Resultaat = s.ToString() + " is onbereikbaar! ";
+                MessageBox.Show(Resultaat, "Offline!");
             }
         }
+
+        //CMD
 
         private void Button_Click2(object sender, System.Windows.RoutedEventArgs e)
         {
@@ -49,12 +55,16 @@ namespace WIC_SDK_Sample.View
             Process.Start(start);
         }
 
+        //IP Scanner
+
         private void Button_Click3(object sender, System.Windows.RoutedEventArgs e)
         {
             ProcessStartInfo start = new ProcessStartInfo();
             start.FileName = @"C:\Program Files (x86)\Advanced IP Scanner\advanced_ip_scanner.exe";
             Process.Start(start);
         }
+
+        //Teamviewer
 
         private void Button_Click4(object sender, System.Windows.RoutedEventArgs e)
         {
@@ -63,6 +73,8 @@ namespace WIC_SDK_Sample.View
             Process.Start(start);
         }
 
+        //Taakbeheer
+
         private void Button_Click5(object sender, System.Windows.RoutedEventArgs e)
         {
             ProcessStartInfo start = new ProcessStartInfo();
@@ -70,21 +82,35 @@ namespace WIC_SDK_Sample.View
             Process.Start(start);
         }
 
+        //Afsluiten
+
         private void Button_Click6(object sender, System.Windows.RoutedEventArgs e)
         {
             System.Diagnostics.Process.Start("shutdown.exe", "-r -t 0");
         }
+
+        //Restart
 
         private void Button_Click7(object sender, System.Windows.RoutedEventArgs e)
         {
             System.Diagnostics.Process.Start("shutdown.exe", "-s -t 0");
         }
 
+        //MsInfo32
+
         private void Button_Click8(object sender, System.Windows.RoutedEventArgs e)
         {
             ProcessStartInfo start = new ProcessStartInfo();
             start.FileName = @"C:\Windows\system32\msinfo32.exe";
             Process.Start(start);
+        }
+
+        //webserver
+
+        private void Button_Click_10(object sender, RoutedEventArgs e)
+        {
+            string ip = TextBox2.Text;
+            System.Diagnostics.Process.Start("http://" + ip);
         }
     }
 }
