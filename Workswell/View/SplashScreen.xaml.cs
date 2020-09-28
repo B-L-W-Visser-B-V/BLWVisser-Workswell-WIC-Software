@@ -1,18 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
+﻿/*
+ * Lucas Huls © 2020
+ * lucashuls.nl
+ */
+using PvDotNet;
+using System;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
+using System.Windows.Media.Animation;
 using System.Windows.Threading;
 
 namespace WIC_SDK_Sample.View
@@ -22,23 +16,29 @@ namespace WIC_SDK_Sample.View
     /// </summary>
     public partial class SplashScreen : Window
     {
-        DispatcherTimer dT = new DispatcherTimer();
-
         public SplashScreen()
         {
             InitializeComponent();
-
-            dT.Tick += new EventHandler(dt_Tick);
-            dT.Interval = new TimeSpan(0, 0, 0, 2, 900);
-            dT.Start();
+            Loadprogressbar();
         }
 
-        private void dt_Tick(object sender, EventArgs e)
+        private void Loadprogressbar()
         {
-            MainWindow db = new MainWindow();
-            db.Show();
-            dT.Stop();
-            this.Hide();
+            pbLoading.Value = 0;
+            pbLoading.Maximum = 100;
+
+            Duration duration = new Duration(TimeSpan.FromSeconds(30));
+            DoubleAnimation dblanim = new DoubleAnimation(3000.0, duration);
+            pbLoading.ValueChanged += (s, e) =>
+            {
+                if (pbLoading.Value == 100)
+                {
+                    MainWindow MainWindow = new MainWindow();
+                    MainWindow.Show();
+                    this.Hide();
+                }
+            };
+            pbLoading.BeginAnimation(ProgressBar.ValueProperty, dblanim);
         }
     }
 }

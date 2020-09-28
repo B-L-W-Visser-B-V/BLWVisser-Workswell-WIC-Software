@@ -1,4 +1,8 @@
-﻿using System.Windows.Controls;
+﻿/*
+ * Lucas Huls © 2020
+ * lucashuls.nl
+ */
+using System.Windows.Controls;
 
 namespace WIC_SDK_Sample.View
 {

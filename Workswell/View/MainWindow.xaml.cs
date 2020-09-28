@@ -1,4 +1,8 @@
-﻿using System;
+﻿/*
+ * Lucas Huls © 2020
+ * lucashuls.nl
+ */
+using System;
 using System.Diagnostics;
 using System.Windows;
 

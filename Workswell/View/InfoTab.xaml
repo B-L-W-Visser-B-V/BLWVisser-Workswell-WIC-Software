@@ -1,10 +1,11 @@
-﻿<UserControl x:Class="WIC_SDK_Sample.View.InfoTab"
+﻿<UserControl
            xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:vm="clr-namespace:WIC_SDK_Sample.ViewModel"
         xmlns:sdk="clr-namespace:WIC_SDK;assembly=WIC_SDK"
         xmlns:convs="clr-namespace:WIC_SDK_Sample.Utils"
-        DataContext="{DynamicResource ApplicationViewModel}" Height="526.8" Width="1101.2"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d" x:Class="WIC_SDK_Sample.View.InfoTab"
+        DataContext="{DynamicResource ApplicationViewModel}" Width="1508" d:DesignHeight="814.8"
              >
     <UserControl.Resources>
         <vm:ApplicationViewModel x:Key="ApplicationViewModel"/>
@@ -24,18 +25,12 @@
 
         </Style>
     </UserControl.Resources>
-    <Grid x:Name="website_button" HorizontalAlignment="Left" Margin="10,10,0,9.4" Width="1081">
-        <Image HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Source="BLW Visser Orange sinds scherp.png" Height="56" Width="224"/>
-        <Grid Margin="10,71,847,251">
-            <Label Content="www.blwvisser.nl" HorizontalAlignment="Left" Margin="0,37,0,0" VerticalAlignment="Top" FontSize="20"/>
-            <Label Content="BLWVisser B.V." HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="20"/>
-            <Label Content="Cromhoffsbleekweg 146" HorizontalAlignment="Left" Margin="0,74,-0.2,0" VerticalAlignment="Top" FontSize="20"/>
-            <Label Content="7513 EW Enschede" HorizontalAlignment="Left" Margin="0,111,0,0" VerticalAlignment="Top" FontSize="20"/>
-            <Label Content="+31 053 431 9661" HorizontalAlignment="Left" Margin="0,148,0,0" VerticalAlignment="Top" FontSize="20"/>
-        </Grid>
-        <TextBox x:Name="TextBox1" HorizontalAlignment="Left" Height="23" Margin="861,256,0,0" TextWrapping="Wrap" Text="10.0.10.15" VerticalAlignment="Top" Width="120" ClipToBounds="True"/>
-        <Button Content="OK" HorizontalAlignment="Left" Margin="986,256,0,0" VerticalAlignment="Top" Width="33" Click="Button_Click_1"/>
-        <Grid Margin="854,22,65,269">
+    <Grid x:Name="website_button" HorizontalAlignment="Left" Margin="10,10,0,9.4" Width="1488">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="14*"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid Margin="1234,10,10,317.4">
             <Button Content="Website" HorizontalAlignment="Left" Margin="7,50,0,0" VerticalAlignment="Top" Width="75" Height="37" Click="Button_Click"/>
             <Label Content="Ping IP:" HorizontalAlignment="Left" Margin="0,242,0,0" VerticalAlignment="Top"/>
             <Button Content="CMD" HorizontalAlignment="Left" Margin="87,50,-0.2,0" VerticalAlignment="Top" Width="75" Height="37" Click="Button_Click2"/>
@@ -46,17 +41,31 @@
             <Button Content="System Info" HorizontalAlignment="Left" Margin="87,134,-0.2,0" VerticalAlignment="Top" Width="75" Height="37" Click="Button_Click8"/>
             <Button Content="Exit SCU" HorizontalAlignment="Left" Margin="87,176,-0.2,0" VerticalAlignment="Top" Width="75" Height="37" Click="Button_Click7"/>
             <Label Content="Tools:" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="24"/>
+            <TextBox x:Name="TextBox1" HorizontalAlignment="Left" Height="23" Margin="69,270,0,0" TextWrapping="Wrap" Text="10.0.10.15" VerticalAlignment="Top" Width="120" ClipToBounds="True"/>
+            <Button Content="OK" HorizontalAlignment="Left" Margin="193,270,0,0" VerticalAlignment="Top" Width="33" Click="Button_Click_1"/>
+            <TextBox x:Name="TextBox2" HorizontalAlignment="Left" Height="23" Margin="69,298,0,0" TextWrapping="Wrap" Text="10.0.10.15" VerticalAlignment="Top" Width="120" ClipToBounds="True"/>
+            <Button Content="OK" HorizontalAlignment="Left" Margin="193,298,0,0" VerticalAlignment="Top" Width="33" Click="Button_Click_10"/>
+            <Label Content="Ping:" HorizontalAlignment="Left" Margin="34,270,0,0" VerticalAlignment="Top" Height="23" FontSize="9"/>
+            <Label Content="Webserver:" HorizontalAlignment="Left" Margin="14,298,0,0" VerticalAlignment="Top" Height="23" FontSize="9"/>
         </Grid>
-        <Label Content="©BLWVisser / Workswell WIC SDK - 2020" HorizontalAlignment="Left" Margin="854,481,0,0" VerticalAlignment="Top"/>
-        <Grid Margin="861,342,65,86">
+        <Label Content="©BLWVisser / Workswell WIC SDK - 2020" HorizontalAlignment="Left" Margin="1251,17.6,0,0" VerticalAlignment="Top" Grid.Row="1" Height="26" Width="227"/>
+        <Grid Margin="1234,430,10,218.4" RenderTransformOrigin="0.616,1.572">
             <Button Content="Webserver" HorizontalAlignment="Left" Margin="0" VerticalAlignment="Top" Width="75" Height="37"/>
             <Button Content="Exit SCU" HorizontalAlignment="Left" Margin="80,0,-0.2,0" VerticalAlignment="Top" Width="75" Height="37" Click="Button_Click7"/>
             <Button Content="Exit SCU" HorizontalAlignment="Left" Margin="0,42,0,0" VerticalAlignment="Top" Width="75" Height="37" Click="Button_Click7"/>
             <Button Content="Exit SCU" HorizontalAlignment="Left" Margin="80,42,-0.2,0" VerticalAlignment="Top" Width="75" Height="37" Click="Button_Click7"/>
         </Grid>
-        <TextBox x:Name="TextBox2" HorizontalAlignment="Left" Height="23" Margin="861,284,0,0" TextWrapping="Wrap" Text="10.0.10.15" VerticalAlignment="Top" Width="120" ClipToBounds="True"/>
-        <Button Content="OK" HorizontalAlignment="Left" Margin="986,284,0,0" VerticalAlignment="Top" Width="33" Click="Button_Click_10"/>
-        <Label Content="Ping:" HorizontalAlignment="Left" Margin="827,256,0,0" VerticalAlignment="Top" Height="23" FontSize="9"/>
-        <Label Content="Webserver:" HorizontalAlignment="Left" Margin="807,284,0,0" VerticalAlignment="Top" Height="23" FontSize="9"/>
+        <Grid Margin="10,10,1115,402.4">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="34*"/>
+                <RowDefinition Height="131*"/>
+            </Grid.RowDefinitions>
+            <Label Content="www.blwvisser.nl" HorizontalAlignment="Left" Margin="10,47,0,0" VerticalAlignment="Top" FontSize="20" Grid.Row="1" Height="37" Width="158"/>
+            <Label Content="BLWVisser B.V." HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="20" Margin="10,10,0,0" Grid.Row="1" Height="37" Width="138"/>
+            <Label Content="Cromhoffsbleekweg 146" HorizontalAlignment="Left" Margin="10,84,0,0" VerticalAlignment="Top" FontSize="20" Grid.Row="1" Height="37" Width="224"/>
+            <Label Content="7513 EW Enschede" HorizontalAlignment="Left" Margin="10,121,0,0" VerticalAlignment="Top" FontSize="20" Grid.Row="1" Height="37" Width="176"/>
+            <Label Content="+31 053 431 9661" HorizontalAlignment="Left" Margin="10,158,0,0" VerticalAlignment="Top" FontSize="20" Grid.Row="1" Height="37" Width="170"/>
+            <Image HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Source="BLW Visser Orange sinds scherp.png" Height="56" Width="224"/>
+        </Grid>
     </Grid>
 </UserControl>

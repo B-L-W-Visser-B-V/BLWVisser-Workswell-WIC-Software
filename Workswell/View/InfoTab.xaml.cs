@@ -1,4 +1,8 @@
-﻿using System.Diagnostics;
+﻿/*
+ * Lucas Huls © 2020
+ * lucashuls.nl
+ */
+using System.Diagnostics;
 using System.Net.NetworkInformation;
 using System.Security.Principal;
 using System.Windows;

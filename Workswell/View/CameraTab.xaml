@@ -5,7 +5,7 @@
         xmlns:sdk="clr-namespace:WIC_SDK;assembly=WIC_SDK"
         xmlns:convs="clr-namespace:WIC_SDK_Sample.Utils"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d" x:Class="WIC_SDK_Sample.View.CameraTab"
-        DataContext="{DynamicResource ApplicationViewModel}" Width="1100"
+        DataContext="{DynamicResource ApplicationViewModel}" Width="1508" d:DesignHeight="814.8"
              >
     <UserControl.Resources>
         <vm:ApplicationViewModel x:Key="ApplicationViewModel"/>
@@ -27,12 +27,13 @@
     </UserControl.Resources>
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="Auto"/>
-            <ColumnDefinition Width="Auto"/>
-            <ColumnDefinition />
+            <ColumnDefinition Width="390.4"/>
+            <ColumnDefinition Width="Auto" MinWidth="237.6"/>
+            <ColumnDefinition Width="631*" />
+            <ColumnDefinition Width="249*"/>
         </Grid.ColumnDefinitions>
 
-        <Grid Grid.Row="0" Grid.Column="0">
+        <Grid Grid.Row="0" Grid.Column="0" Margin="0,0,0.4,-0.6">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="*"/>
@@ -48,7 +49,8 @@
                     <RowDefinition Height="Auto"/>
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="80*"/>
+                    <ColumnDefinition Width="80*"/>
                     <ColumnDefinition Width="80"/>
                     <ColumnDefinition Width="80"/>
                     <ColumnDefinition Width="80"/>
@@ -57,28 +59,32 @@
                 <TextBlock 
                     Grid.Row="0"
                     VerticalAlignment="Center"
-                    Margin="5"
+                    Margin="5,8,0,7.2"
                     FontWeight="Bold"
-                    Text="Cameras"/>
+                    Text="Cameras" Height="16" Width="48"/>
                 <Button
-                    Grid.Row="0"
-                    Grid.Column="1"
-                    Content="Connect"
+                    Content="Exit"
                     Width="70"
-                    Command="{Binding CameraCenterVM.SelectedCamera.ConnectCommand}"/>
+                    Margin="75,4,5.4,0" Grid.ColumnSpan="2" Click="Button_Click"/>
                 <Button
                     Grid.Row="0"
                     Grid.Column="2"
-                    Content="Disconnect"
+                    Content="Connect"
                     Width="70"
-                    Command="{Binding CameraCenterVM.SelectedCamera.DisconnectCommand}"/>
+                    Command="{Binding CameraCenterVM.SelectedCamera.ConnectCommand}" Margin="4.6,4,5.4,0"/>
                 <Button
                     Grid.Row="0"
                     Grid.Column="3"
+                    Content="Disconnect"
+                    Width="70"
+                    Command="{Binding CameraCenterVM.SelectedCamera.DisconnectCommand}" Margin="4.6,4,5.4,0"/>
+                <Button
+                    Grid.Row="0"
+                    Grid.Column="4"
                     Content="Refresh"
                     Width="70"
                     HorizontalAlignment="Right"
-                    Command="{Binding CameraCenterVM.RefreshCommand}"/>
+                    Command="{Binding CameraCenterVM.RefreshCommand}" Margin="0,4,4.4,0"/>
             </Grid>
 
             <ListBox
@@ -306,9 +312,9 @@
 
         <Grid VerticalAlignment="Top"
                 HorizontalAlignment="Left"
-                Margin="10"
+                Margin="9.6,10,0,0"
                 Grid.Row="0"
-                Grid.Column="1">
+                Grid.Column="1" Height="230" Width="225">
             <Grid.Resources>
                 <Style TargetType="{x:Type TextBlock}">
                     <Setter Property="Margin" Value="5"/>
@@ -329,38 +335,38 @@
             </Grid.RowDefinitions>
 
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="Auto"/>
-                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto" MinWidth="87.2"/>
+                <ColumnDefinition Width="Auto" MinWidth="57.6"/>
             </Grid.ColumnDefinitions>
 
-            <TextBlock Grid.Row="0" Grid.ColumnSpan="2" Text="Device info" FontWeight="Bold"/>
-            <Border Grid.Row="0" Grid.ColumnSpan="2" BorderThickness="0,0,0,1" BorderBrush="Black"/>
-            <TextBlock Grid.Row="1" Text="Manufacturer"/>
-            <TextBlock Grid.Row="1" Grid.Column="1" Text="{Binding CameraCenterVM.SelectedCamera.VendorName, FallbackValue=--, TargetNullValue=--}"/>
+            <TextBlock Grid.Row="0" Grid.ColumnSpan="2" Text="Device info" FontWeight="Bold" Margin="5,5,-4.6,5.2"/>
+            <Border Grid.Row="0" Grid.ColumnSpan="2" BorderThickness="0,0,0,1" BorderBrush="Black" Margin="0,0,-9.6,0.2"/>
+            <TextBlock Grid.Row="1" Text="Manufacturer" Margin="5,4.8,6,5.4"/>
+            <TextBlock Grid.Row="1" Grid.Column="1" Text="{Binding CameraCenterVM.SelectedCamera.VendorName, FallbackValue=--, TargetNullValue=--}" Margin="4,4.8,-4.6,5.4"/>
 
-            <TextBlock Text="Model" Grid.Row="2"/>
-            <TextBlock Grid.Row="2" Grid.Column="1" Text="{Binding CameraCenterVM.SelectedCamera.ModelName, FallbackValue=--, TargetNullValue=--}"/>
+            <TextBlock Text="Model" Grid.Row="2" Margin="5,4.6,6,4.6"/>
+            <TextBlock Grid.Row="2" Grid.Column="1" Text="{Binding CameraCenterVM.SelectedCamera.ModelName, FallbackValue=--, TargetNullValue=--}" Margin="4,4.6,-4.6,4.6"/>
 
-            <TextBlock Text="Name" Grid.Row="3"/>
-            <TextBlock Grid.Row="3" Grid.Column="1" Text="{Binding CameraCenterVM.SelectedCamera.UserDefinedName, FallbackValue=--, TargetNullValue=--}"/>
+            <TextBlock Text="Name" Grid.Row="3" Margin="5,5.4,6,4.8"/>
+            <TextBlock Grid.Row="3" Grid.Column="1" Text="{Binding CameraCenterVM.SelectedCamera.UserDefinedName, FallbackValue=--, TargetNullValue=--}" Margin="4,5.4,-4.6,4.8"/>
 
-            <TextBlock Text="Serial number" Grid.Row="5"/>
-            <TextBlock Grid.Row="5" Grid.Column="1" Text="{Binding CameraCenterVM.SelectedCamera.SerialNumber, FallbackValue=--, TargetNullValue=--}"/>
+            <TextBlock Text="Serial number" Grid.Row="5" Margin="5,4.6,6,4.6"/>
+            <TextBlock Grid.Row="5" Grid.Column="1" Text="{Binding CameraCenterVM.SelectedCamera.SerialNumber, FallbackValue=--, TargetNullValue=--}" Margin="4,4.6,-4.6,4.6"/>
 
-            <TextBlock Text="Status" Grid.Row="6"/>
-            <TextBlock FontWeight="Bold" Grid.Row="6" Grid.Column="1" Text="{Binding CameraCenterVM.SelectedCamera.Status, FallbackValue=--, TargetNullValue=--}"/>
+            <TextBlock Text="Status" Grid.Row="6" Margin="5,5.4,6,4.8"/>
+            <TextBlock FontWeight="Bold" Grid.Row="6" Grid.Column="1" Text="{Binding CameraCenterVM.SelectedCamera.Status, FallbackValue=--, TargetNullValue=--}" Margin="4,5.4,-4.6,4.8"/>
 
-            <TextBlock Text="Is Calibrated" Grid.Row="7"/>
-            <TextBlock FontWeight="Bold" Grid.Row="7" Grid.Column="1" Text="{Binding CameraCenterVM.SelectedCamera.IsCalibrated, FallbackValue=--, TargetNullValue=--}"/>
+            <TextBlock Text="Is Calibrated" Grid.Row="7" Margin="5,5.2,6,5"/>
+            <TextBlock FontWeight="Bold" Grid.Row="7" Grid.Column="1" Text="{Binding CameraCenterVM.SelectedCamera.IsCalibrated, FallbackValue=--, TargetNullValue=--}" Margin="4,5.2,-4.6,5"/>
 
-            <TextBlock Text="Is Recording" Grid.Row="8"/>
-            <TextBlock FontWeight="Bold" Grid.Row="8" Grid.Column="1" Text="{Binding CameraCenterVM.SelectedCamera.IsRecording, FallbackValue=--, TargetNullValue=--}"/>
+            <TextBlock Text="Is Recording" Grid.Row="8" Margin="5,5,6,5.2"/>
+            <TextBlock FontWeight="Bold" Grid.Row="8" Grid.Column="1" Text="{Binding CameraCenterVM.SelectedCamera.IsRecording, FallbackValue=--, TargetNullValue=--}" Margin="4,5,-4.6,5.2"/>
 
-            <TextBlock Grid.Row="9"><Run Text="Estimated FPS"/><Underline/></TextBlock>
-            <TextBlock FontWeight="Bold" Grid.Row="9" Grid.Column="1" Text="{Binding CameraCenterVM.SelectedCamera.Fps, FallbackValue=--, TargetNullValue=--}"/>
+            <TextBlock Grid.Row="9" Margin="5,4.8,6,5.4"><Run Text="Estimated FPS"/><Underline/></TextBlock>
+            <TextBlock FontWeight="Bold" Grid.Row="9" Grid.Column="1" Text="{Binding CameraCenterVM.SelectedCamera.Fps, FallbackValue=--, TargetNullValue=--}" Margin="4,4.8,-4.6,5.4"/>
         </Grid>
 
-        <Grid Margin="10.4,7,10,13.6" Grid.Column="2">
+        <Grid Margin="22,7,10,129.4" Grid.Column="2" Grid.ColumnSpan="2">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition/>
@@ -382,9 +388,13 @@
             <Image
                     x:Name="ThermalDisplay"
     
-                    Source="{Binding CameraCenterVM.SelectedCamera.ThermalImage}" ClipToBounds="True" Margin="0,31,0,99.8" Grid.RowSpan="2" 
-                    />
+                    Source="{Binding CameraCenterVM.SelectedCamera.ThermalImage}" ClipToBounds="True" Margin="0,31,0,-0.2" Grid.RowSpan="2" VerticalAlignment="Center" Stretch="Fill" 
+                    >
+                <Image.Effect>
+                    <DropShadowEffect BlurRadius="20"/>
+                </Image.Effect>
+            </Image>
         </Grid>
-        <Image HorizontalAlignment="Center" Height="64" Margin="352.4,466,18,0" Width="216" Source="BLW Visser Orange sinds scherp.png" VerticalAlignment="Top" Grid.Column="2" ClipToBounds="True" MouseLeftButtonDown="Image_MouseLeftButtonDown"/>
+        <Image HorizontalAlignment="Center" Height="64" Margin="9.8,740,23,0" Width="216" Source="BLW Visser Orange sinds scherp.png" VerticalAlignment="Top" Grid.Column="3" ClipToBounds="True" MouseLeftButtonDown="Image_MouseLeftButtonDown"/>
     </Grid>
 </UserControl>

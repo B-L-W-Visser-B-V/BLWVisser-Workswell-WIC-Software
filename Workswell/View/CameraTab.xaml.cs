@@ -17,5 +17,10 @@ namespace WIC_SDK_Sample.View
         {
             System.Diagnostics.Process.Start("https://blwvisser.nl");
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            System.Environment.Exit(0); 
+        }
     }
 }

@@ -5,7 +5,7 @@
         xmlns:convs="clr-namespace:WIC_SDK_Sample.Utils"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d" x:Class="WIC_SDK_Sample.View.MainWindow"
         Title="BLWVisser" WindowStyle="None" WindowState="Maximized"
-        DataContext="{DynamicResource MainViewModel}" Icon="icoon.png">
+        DataContext="{DynamicResource MainViewModel}" Icon="icoon.png" d:DesignWidth="1145.6" d:DesignHeight="637.6">
     <Window.Resources>
         <convs:BoolToVisibilityConverter x:Key="BoolToVisConverter" TrueValue="Visible" FalseValue="Collapsed" />
         <Style TargetType="{x:Type Button}">
