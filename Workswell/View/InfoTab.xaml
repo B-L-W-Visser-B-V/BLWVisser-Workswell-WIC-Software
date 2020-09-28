@@ -30,9 +30,9 @@
             <RowDefinition Height="14*"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <Grid Margin="1234,10,10,317.4">
+        <Grid Margin="1234,10,10,402">
             <Button Content="Website" HorizontalAlignment="Left" Margin="7,50,0,0" VerticalAlignment="Top" Width="75" Height="37" Click="Button_Click"/>
-            <Label Content="Ping IP:" HorizontalAlignment="Left" Margin="0,242,0,0" VerticalAlignment="Top"/>
+            <Label Content="Ping IP:" HorizontalAlignment="Left" Margin="0,228,0,0" VerticalAlignment="Top" FontSize="24"/>
             <Button Content="CMD" HorizontalAlignment="Left" Margin="87,50,-0.2,0" VerticalAlignment="Top" Width="75" Height="37" Click="Button_Click2"/>
             <Button Content="IP Scanner" HorizontalAlignment="Left" Margin="7,92,0,0" VerticalAlignment="Top" Width="75" Height="37" Click="Button_Click3"/>
             <Button Content="TeamViewer" HorizontalAlignment="Left" Margin="87,92,-0.2,0" VerticalAlignment="Top" Width="75" Height="37" Click="Button_Click4"/>
@@ -49,12 +49,6 @@
             <Label Content="Webserver:" HorizontalAlignment="Left" Margin="14,298,0,0" VerticalAlignment="Top" Height="23" FontSize="9"/>
         </Grid>
         <Label Content="©BLWVisser / Workswell WIC SDK - 2020" HorizontalAlignment="Left" Margin="1251,17.6,0,0" VerticalAlignment="Top" Grid.Row="1" Height="26" Width="227"/>
-        <Grid Margin="1234,430,10,218.4" RenderTransformOrigin="0.616,1.572">
-            <Button Content="Webserver" HorizontalAlignment="Left" Margin="0" VerticalAlignment="Top" Width="75" Height="37"/>
-            <Button Content="Exit SCU" HorizontalAlignment="Left" Margin="80,0,-0.2,0" VerticalAlignment="Top" Width="75" Height="37" Click="Button_Click7"/>
-            <Button Content="Exit SCU" HorizontalAlignment="Left" Margin="0,42,0,0" VerticalAlignment="Top" Width="75" Height="37" Click="Button_Click7"/>
-            <Button Content="Exit SCU" HorizontalAlignment="Left" Margin="80,42,-0.2,0" VerticalAlignment="Top" Width="75" Height="37" Click="Button_Click7"/>
-        </Grid>
         <Grid Margin="10,10,1115,402.4">
             <Grid.RowDefinitions>
                 <RowDefinition Height="34*"/>

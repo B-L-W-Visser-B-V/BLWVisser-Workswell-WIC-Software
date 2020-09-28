@@ -43,14 +43,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="BLWVisser Workswell.exe" size="449024">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="BLWVisser Workswell.exe" size="448512">
       <assemblyIdentity name="BLWVisser Workswell" version="2.0.0.0" language="neutral" processorArchitecture="amd64" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>LwFOHL6chig/bhqMqZ24zcdBKqV/9QsT7ziqEyAKYT0=</dsig:DigestValue>
+        <dsig:DigestValue>zyc4Ej9qHxzxd32+VD/teK7o7vBigUzVJ2CXA/O01rM=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

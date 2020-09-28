@@ -384,6 +384,7 @@
                     Content="Stop Acquisition"
                     Command="{Binding CameraCenterVM.SelectedCamera.StopAcquisitionCommand}"/>
             </StackPanel>
+            <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Center" Height="648" Grid.Row="1" Stroke="Black" VerticalAlignment="Top" Width="848"/>
 
             <Image
                     x:Name="ThermalDisplay"
