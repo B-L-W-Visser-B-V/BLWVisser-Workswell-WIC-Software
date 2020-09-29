@@ -1,7 +1,5 @@
 ﻿using System;
-using System.Diagnostics;
 using System.Windows;
-using WIC_SDK_Sample.View;
 
 namespace WIC_SDK_Sample
 {

@@ -4,7 +4,6 @@
  */
 using System.Diagnostics;
 using System.Net.NetworkInformation;
-using System.Security.Principal;
 using System.Windows;
 using System.Windows.Controls;
 

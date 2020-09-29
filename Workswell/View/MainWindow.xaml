@@ -5,7 +5,7 @@
         xmlns:convs="clr-namespace:WIC_SDK_Sample.Utils"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d" x:Class="WIC_SDK_Sample.View.MainWindow"
         Title="BLWVisser" WindowStyle="None" WindowState="Maximized"
-        DataContext="{DynamicResource MainViewModel}" Icon="icoon.png" d:DesignWidth="1145.6" d:DesignHeight="637.6">
+        DataContext="{DynamicResource MainViewModel}" Icon="icoon.png" d:DesignWidth="1145.6" d:DesignHeight="637.6" Background="#FF0063B6" BorderBrush="#FF009CD8">
     <Window.Resources>
         <convs:BoolToVisibilityConverter x:Key="BoolToVisConverter" TrueValue="Visible" FalseValue="Collapsed" />
         <Style TargetType="{x:Type Button}">
@@ -19,17 +19,17 @@
             <ColumnDefinition Width="99*"/>
             <ColumnDefinition Width="1022*"/>
         </Grid.ColumnDefinitions>
-        <TabControl Grid.ColumnSpan="2" Margin="0,0,-0.4,0">
-            <TabItem Header="Camera">
+        <TabControl Grid.ColumnSpan="2" Margin="0,0,-0.4,0" Background="#FF009CD8" BorderBrush="#FF009CD8">
+            <TabItem Header="Camera" Background="#FF009CD8" IsSelected="True" BorderBrush="#FF009CD8">
                 <m:CameraTab x:Name="CameraTab"/>
             </TabItem>
-            <TabItem Header="Image">
+            <TabItem Header="Image" Background="#FF009CD8" BorderBrush="#FF009CD8">
                 <m:ThermalImageTab/>
             </TabItem>
-            <TabItem Header="Player">
+            <TabItem Header="Player" Background="#FF009CD8" BorderBrush="#FF009CD8">
                 <m:ThermalSequencePlayerTab/>
             </TabItem>
-            <TabItem Header="Info">
+            <TabItem Header="Info" Background="#FF009CD8" BorderBrush="#FF009CD8">
                 <m:InfoTab Margin="10,2,11,10" Loaded="InfoTab_Loaded"/>
             </TabItem>
         </TabControl>

@@ -25,7 +25,11 @@
 
         </Style>
     </UserControl.Resources>
-    <Grid>
+    <Grid Background="#FF009CD8">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="368*"/>
+            <RowDefinition Height="39*"/>
+        </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="390.4"/>
             <ColumnDefinition Width="Auto" MinWidth="237.6"/>
@@ -33,7 +37,7 @@
             <ColumnDefinition Width="249*"/>
         </Grid.ColumnDefinitions>
 
-        <Grid Grid.Row="0" Grid.Column="0" Margin="0,0,0.4,-0.6">
+        <Grid Grid.Row="0" Grid.Column="0" Margin="0,0,0.4,-0.6" Grid.RowSpan="2">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="*"/>
@@ -65,26 +69,54 @@
                 <Button
                     Content="Exit"
                     Width="70"
-                    Margin="75,4,5.4,0" Grid.ColumnSpan="2" Click="Button_Click"/>
+                    Margin="75,4,5,0" Grid.ColumnSpan="2" Click="Button_Click" Height="23" VerticalAlignment="Top" Background="#FF0063B6" BorderThickness="0,1,1,1">
+                    <Button.Effect>
+                        <DropShadowEffect Direction="300" ShadowDepth="1"/>
+                    </Button.Effect>
+                    <Button.BorderBrush>
+                        <SolidColorBrush Color="#FF707070" Opacity="0"/>
+                    </Button.BorderBrush>
+                </Button>
                 <Button
                     Grid.Row="0"
                     Grid.Column="2"
                     Content="Connect"
                     Width="70"
-                    Command="{Binding CameraCenterVM.SelectedCamera.ConnectCommand}" Margin="4.6,4,5.4,0"/>
+                    Command="{Binding CameraCenterVM.SelectedCamera.ConnectCommand}" Margin="4.6,4,5.4,0" Background="#FF0063B6" BorderThickness="0,1,1,1">
+                    <Button.Effect>
+                        <DropShadowEffect Direction="300" ShadowDepth="1"/>
+                    </Button.Effect>
+                    <Button.BorderBrush>
+                        <SolidColorBrush Color="#FF707070" Opacity="0"/>
+                    </Button.BorderBrush>
+                </Button>
                 <Button
                     Grid.Row="0"
                     Grid.Column="3"
                     Content="Disconnect"
                     Width="70"
-                    Command="{Binding CameraCenterVM.SelectedCamera.DisconnectCommand}" Margin="4.6,4,5.4,0"/>
+                    Command="{Binding CameraCenterVM.SelectedCamera.DisconnectCommand}" Margin="4.6,4,5.4,0" Background="#FF0063B6" BorderThickness="0,1,1,1">
+                    <Button.Effect>
+                        <DropShadowEffect Direction="300" ShadowDepth="1"/>
+                    </Button.Effect>
+                    <Button.BorderBrush>
+                        <SolidColorBrush Color="#FF707070" Opacity="0"/>
+                    </Button.BorderBrush>
+                </Button>
                 <Button
                     Grid.Row="0"
                     Grid.Column="4"
                     Content="Refresh"
                     Width="70"
                     HorizontalAlignment="Right"
-                    Command="{Binding CameraCenterVM.RefreshCommand}" Margin="0,4,4.4,0"/>
+                    Command="{Binding CameraCenterVM.RefreshCommand}" Margin="0,4,4.4,0" Background="#FF0063B6" BorderThickness="0,1,1,1">
+                    <Button.Effect>
+                        <DropShadowEffect Direction="300" ShadowDepth="1"/>
+                    </Button.Effect>
+                    <Button.BorderBrush>
+                        <SolidColorBrush Color="#FF707070" Opacity="0"/>
+                    </Button.BorderBrush>
+                </Button>
             </Grid>
 
             <ListBox
@@ -94,7 +126,7 @@
                 MinHeight="100"
                 Margin="5"
                 ItemsSource="{Binding CameraCenterVM.FoundCameras}"
-                SelectedItem="{Binding CameraCenterVM.SelectedCamera}">
+                SelectedItem="{Binding CameraCenterVM.SelectedCamera}" Background="#FF008CC2">
                 <ListBox.ItemTemplate>
                     <DataTemplate>
                         <StackPanel
@@ -115,16 +147,44 @@
                 Orientation="Horizontal">
                 <Button
                     Content="FFC"
-                    Command="{Binding CameraCenterVM.SelectedCamera.CalibrationCommand}" Visibility="Hidden"/>
+                    Command="{Binding CameraCenterVM.SelectedCamera.CalibrationCommand}" Background="#FF0063B6" BorderThickness="0,1,1,1">
+                    <Button.Effect>
+                        <DropShadowEffect Direction="300" ShadowDepth="1"/>
+                    </Button.Effect>
+                    <Button.BorderBrush>
+                        <SolidColorBrush Color="#FF707070" Opacity="0"/>
+                    </Button.BorderBrush>
+                </Button>
                 <Button
                     Content="Save Image"
-                    Command="{Binding CameraCenterVM.SelectedCamera.SaveImageCommand}"/>
+                    Command="{Binding CameraCenterVM.SelectedCamera.SaveImageCommand}" Background="#FF0063B6" BorderThickness="0,1,1,1">
+                    <Button.Effect>
+                        <DropShadowEffect Direction="300" ShadowDepth="1"/>
+                    </Button.Effect>
+                    <Button.BorderBrush>
+                        <SolidColorBrush Color="#FF707070" Opacity="0"/>
+                    </Button.BorderBrush>
+                </Button>
                 <Button
                     Content="Start Recording"
-                    Command="{Binding CameraCenterVM.SelectedCamera.StartRecordingCommand}"/>
+                    Command="{Binding CameraCenterVM.SelectedCamera.StartRecordingCommand}" Background="#FF0063B6" BorderThickness="0,1,1,1">
+                    <Button.Effect>
+                        <DropShadowEffect Direction="300" ShadowDepth="1"/>
+                    </Button.Effect>
+                    <Button.BorderBrush>
+                        <SolidColorBrush Color="#FF707070" Opacity="0"/>
+                    </Button.BorderBrush>
+                </Button>
                 <Button
                     Content="Stop Recording"
-                    Command="{Binding CameraCenterVM.SelectedCamera.StopRecordingCommand}"/>
+                    Command="{Binding CameraCenterVM.SelectedCamera.StopRecordingCommand}" Background="#FF0063B6" BorderThickness="0,1,1,1">
+                    <Button.Effect>
+                        <DropShadowEffect Direction="300" ShadowDepth="1"/>
+                    </Button.Effect>
+                    <Button.BorderBrush>
+                        <SolidColorBrush Color="#FF707070" Opacity="0"/>
+                    </Button.BorderBrush>
+                </Button>
             </StackPanel>
             <Grid Grid.Row="3" Margin="12,30.8,-1.6,10" IsEnabled="{Binding CameraCenterVM.SelectedCamera.IsConnected}" Grid.RowSpan="2">
                 <Grid.RowDefinitions>
@@ -158,7 +218,7 @@
                 <StackPanel Grid.Column="1" Margin="0,5,0,0" Grid.Row="2" Orientation="Horizontal">
                     <TextBox 
                         Width="35" x:Name="EmissivityInput"
-                        Text="{Binding CameraCenterVM.SelectedCamera.Emisivity}"/>
+                        Text="{Binding CameraCenterVM.SelectedCamera.Emisivity}" Background="#FF008CC2" BorderBrush="#FF0063B6"/>
                     <TextBlock Text="" />
                 </StackPanel>
 
@@ -170,7 +230,7 @@
                         Grid.Row="3"
                         Orientation="Horizontal">
                     <TextBox
-                        Width="35" x:Name="ReflectedTemperatureInput" Text="{Binding CameraCenterVM.SelectedCamera.ReflectedTemperature}"/>
+                        Width="35" x:Name="ReflectedTemperatureInput" Text="{Binding CameraCenterVM.SelectedCamera.ReflectedTemperature}" Background="#FF008CC2" BorderBrush="#FF0063B6"/>
                     <TextBlock Text="°C"/>
                 </StackPanel>
 
@@ -184,7 +244,7 @@
                     <TextBox 
                         Width="35"
                         x:Name="AtmosphericTemperatureInput"
-                        Text="{Binding CameraCenterVM.SelectedCamera.AtmosphericTemperature}"/>
+                        Text="{Binding CameraCenterVM.SelectedCamera.AtmosphericTemperature}" Background="#FF008CC2" BorderBrush="#FF0063B6"/>
                     <TextBlock Text="°C"/>
                 </StackPanel>
 
@@ -198,7 +258,7 @@
                     <TextBox
                         Width="35"
                         x:Name="HumidityInput"
-                        Text="{Binding CameraCenterVM.SelectedCamera.Humidity}"/>
+                        Text="{Binding CameraCenterVM.SelectedCamera.Humidity}" Background="#FF008CC2" BorderBrush="#FF0063B6"/>
                     <TextBlock Text="%"/>
                 </StackPanel>
 
@@ -212,7 +272,7 @@
                     <TextBox
                         Width="35"
                         x:Name="DistanceInput"
-                        Text="{Binding CameraCenterVM.SelectedCamera.Distance}"/>
+                        Text="{Binding CameraCenterVM.SelectedCamera.Distance}" Background="#FF008CC2" BorderBrush="#FF0063B6"/>
                     <TextBlock Text="m"/>
                 </StackPanel>
 
@@ -366,7 +426,7 @@
             <TextBlock FontWeight="Bold" Grid.Row="9" Grid.Column="1" Text="{Binding CameraCenterVM.SelectedCamera.Fps, FallbackValue=--, TargetNullValue=--}" Margin="4,4.8,-4.6,5.4"/>
         </Grid>
 
-        <Grid Margin="22,7,10,129.4" Grid.Column="2" Grid.ColumnSpan="2">
+        <Grid Margin="22,7,10,41" Grid.Column="2" Grid.ColumnSpan="2">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition/>
@@ -379,23 +439,37 @@
                 HorizontalAlignment="Center">
                 <Button 
                     Content="Start Acquisition"
-                    Command="{Binding CameraCenterVM.SelectedCamera.StartAcquisitionCommand}"/>
+                    Command="{Binding CameraCenterVM.SelectedCamera.StartAcquisitionCommand}" Background="#FF0063B6" BorderThickness="0,1,1,1">
+                    <Button.Effect>
+                        <DropShadowEffect Direction="300" ShadowDepth="1"/>
+                    </Button.Effect>
+                    <Button.BorderBrush>
+                        <SolidColorBrush Color="#FF707070" Opacity="0"/>
+                    </Button.BorderBrush>
+                </Button>
                 <Button
                     Content="Stop Acquisition"
-                    Command="{Binding CameraCenterVM.SelectedCamera.StopAcquisitionCommand}"/>
+                    Command="{Binding CameraCenterVM.SelectedCamera.StopAcquisitionCommand}" Background="#FF0063B6" BorderThickness="0,1,1,1">
+                    <Button.Effect>
+                        <DropShadowEffect Direction="300" ShadowDepth="1"/>
+                    </Button.Effect>
+                    <Button.BorderBrush>
+                        <SolidColorBrush Color="#FF707070" Opacity="0"/>
+                    </Button.BorderBrush>
+                </Button>
             </StackPanel>
-            <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Center" Height="648" Grid.Row="1" Stroke="Black" VerticalAlignment="Top" Width="848"/>
+            <Rectangle Fill="#FF008CC2" HorizontalAlignment="Center" Height="648" Grid.Row="1" Stroke="#FF008CC2" VerticalAlignment="Top" Width="848"/>
 
             <Image
                     x:Name="ThermalDisplay"
     
-                    Source="{Binding CameraCenterVM.SelectedCamera.ThermalImage}" ClipToBounds="True" Margin="0,31,0,-0.2" Grid.RowSpan="2" VerticalAlignment="Center" Stretch="Fill" 
+                    Source="{Binding CameraCenterVM.SelectedCamera.ThermalImage}" ClipToBounds="True" Margin="0,0.333,0,-0.333" VerticalAlignment="Center" Stretch="Fill" Grid.Row="1" 
                     >
                 <Image.Effect>
                     <DropShadowEffect BlurRadius="20"/>
                 </Image.Effect>
             </Image>
         </Grid>
-        <Image HorizontalAlignment="Center" Height="64" Margin="9.8,740,23,0" Width="216" Source="BLW Visser Orange sinds scherp.png" VerticalAlignment="Top" Grid.Column="3" ClipToBounds="True" MouseLeftButtonDown="Image_MouseLeftButtonDown"/>
+        <Image HorizontalAlignment="Center" Height="64" Margin="631,3,33,0" Width="216" Source="BLW Visser Orange sinds scherp.png" VerticalAlignment="Top" Grid.Column="2" ClipToBounds="True" MouseLeftButtonDown="Image_MouseLeftButtonDown" Grid.ColumnSpan="2" Grid.Row="1"/>
     </Grid>
 </UserControl>

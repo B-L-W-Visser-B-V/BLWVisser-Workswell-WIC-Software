@@ -25,26 +25,96 @@
 
         </Style>
     </UserControl.Resources>
-    <Grid x:Name="website_button" HorizontalAlignment="Left" Margin="10,10,0,9.4" Width="1488">
+    <Grid x:Name="website_button" HorizontalAlignment="Left" Margin="10,10,0,9.4" Width="1488" Background="#FF009CD8">
         <Grid.RowDefinitions>
             <RowDefinition Height="14*"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
         <Grid Margin="1234,10,10,402">
-            <Button Content="Website" HorizontalAlignment="Left" Margin="7,50,0,0" VerticalAlignment="Top" Width="75" Height="37" Click="Button_Click"/>
+            <Button Content="Website" HorizontalAlignment="Left" Margin="7,50,0,0" VerticalAlignment="Top" Width="75" Height="37" Click="Button_Click" Background="#FF0063B6" BorderThickness="0,1,1,1">
+                <Button.Effect>
+                    <DropShadowEffect Direction="300" ShadowDepth="1"/>
+                </Button.Effect>
+                <Button.BorderBrush>
+                    <SolidColorBrush Color="#FF707070" Opacity="0"/>
+                </Button.BorderBrush>
+            </Button>
             <Label Content="Ping IP:" HorizontalAlignment="Left" Margin="0,228,0,0" VerticalAlignment="Top" FontSize="24"/>
-            <Button Content="CMD" HorizontalAlignment="Left" Margin="87,50,-0.2,0" VerticalAlignment="Top" Width="75" Height="37" Click="Button_Click2"/>
-            <Button Content="IP Scanner" HorizontalAlignment="Left" Margin="7,92,0,0" VerticalAlignment="Top" Width="75" Height="37" Click="Button_Click3"/>
-            <Button Content="TeamViewer" HorizontalAlignment="Left" Margin="87,92,-0.2,0" VerticalAlignment="Top" Width="75" Height="37" Click="Button_Click4"/>
-            <Button Content="Taakbeheer" HorizontalAlignment="Left" Margin="7,134,0,0" VerticalAlignment="Top" Width="75" Height="37" Click="Button_Click5"/>
-            <Button Content="Reboot SCU" HorizontalAlignment="Left" Margin="7,176,0,0" VerticalAlignment="Top" Width="75" Height="37" Click="Button_Click6"/>
-            <Button Content="System Info" HorizontalAlignment="Left" Margin="87,134,-0.2,0" VerticalAlignment="Top" Width="75" Height="37" Click="Button_Click8"/>
-            <Button Content="Exit SCU" HorizontalAlignment="Left" Margin="87,176,-0.2,0" VerticalAlignment="Top" Width="75" Height="37" Click="Button_Click7"/>
+            <Button Content="CMD" HorizontalAlignment="Left" Margin="87,50,-0.2,0" VerticalAlignment="Top" Width="75" Height="37" Click="Button_Click2" Background="#FF0063B6" BorderThickness="0,1,1,1">
+                <Button.Effect>
+                    <DropShadowEffect Direction="300" ShadowDepth="1"/>
+                </Button.Effect>
+                <Button.BorderBrush>
+                    <SolidColorBrush Color="#FF707070" Opacity="0"/>
+                </Button.BorderBrush>
+            </Button>
+            <Button Content="IP Scanner" HorizontalAlignment="Left" Margin="7,92,0,0" VerticalAlignment="Top" Width="75" Height="37" Click="Button_Click3" Background="#FF0063B6" BorderThickness="0,1,1,1">
+                <Button.Effect>
+                    <DropShadowEffect Direction="300" ShadowDepth="1"/>
+                </Button.Effect>
+                <Button.BorderBrush>
+                    <SolidColorBrush Color="#FF707070" Opacity="0"/>
+                </Button.BorderBrush>
+            </Button>
+            <Button Content="TeamViewer" HorizontalAlignment="Left" Margin="87,92,-0.2,0" VerticalAlignment="Top" Width="75" Height="37" Click="Button_Click4" Background="#FF0063B6" BorderThickness="0,1,1,1">
+                <Button.Effect>
+                    <DropShadowEffect Direction="300" ShadowDepth="1"/>
+                </Button.Effect>
+                <Button.BorderBrush>
+                    <SolidColorBrush Color="#FF707070" Opacity="0"/>
+                </Button.BorderBrush>
+            </Button>
+            <Button Content="Taakbeheer" HorizontalAlignment="Left" Margin="7,134,0,0" VerticalAlignment="Top" Width="75" Height="37" Click="Button_Click5" Background="#FF0063B6" BorderThickness="0,1,1,1">
+                <Button.Effect>
+                    <DropShadowEffect Direction="300" ShadowDepth="1"/>
+                </Button.Effect>
+                <Button.BorderBrush>
+                    <SolidColorBrush Color="#FF707070" Opacity="0"/>
+                </Button.BorderBrush>
+            </Button>
+            <Button Content="Reboot SCU" HorizontalAlignment="Left" Margin="7,176,0,0" VerticalAlignment="Top" Width="75" Height="37" Click="Button_Click6" Background="#FF0063B6" BorderThickness="0,1,1,1">
+                <Button.Effect>
+                    <DropShadowEffect Direction="300" ShadowDepth="1"/>
+                </Button.Effect>
+                <Button.BorderBrush>
+                    <SolidColorBrush Color="#FF707070" Opacity="0"/>
+                </Button.BorderBrush>
+            </Button>
+            <Button Content="System Info" HorizontalAlignment="Left" Margin="87,134,-0.2,0" VerticalAlignment="Top" Width="75" Height="37" Click="Button_Click8" Background="#FF0063B6" BorderThickness="0,1,1,1">
+                <Button.Effect>
+                    <DropShadowEffect Direction="300" ShadowDepth="1"/>
+                </Button.Effect>
+                <Button.BorderBrush>
+                    <SolidColorBrush Color="#FF707070" Opacity="0"/>
+                </Button.BorderBrush>
+            </Button>
+            <Button Content="Exit SCU" HorizontalAlignment="Left" Margin="87,176,-0.2,0" VerticalAlignment="Top" Width="75" Height="37" Click="Button_Click7" Background="#FF0063B6" BorderThickness="0,1,1,1">
+                <Button.Effect>
+                    <DropShadowEffect Direction="300" ShadowDepth="1"/>
+                </Button.Effect>
+                <Button.BorderBrush>
+                    <SolidColorBrush Color="#FF707070" Opacity="0"/>
+                </Button.BorderBrush>
+            </Button>
             <Label Content="Tools:" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="24"/>
-            <TextBox x:Name="TextBox1" HorizontalAlignment="Left" Height="23" Margin="69,270,0,0" TextWrapping="Wrap" Text="10.0.10.15" VerticalAlignment="Top" Width="120" ClipToBounds="True"/>
-            <Button Content="OK" HorizontalAlignment="Left" Margin="193,270,0,0" VerticalAlignment="Top" Width="33" Click="Button_Click_1"/>
-            <TextBox x:Name="TextBox2" HorizontalAlignment="Left" Height="23" Margin="69,298,0,0" TextWrapping="Wrap" Text="10.0.10.15" VerticalAlignment="Top" Width="120" ClipToBounds="True"/>
-            <Button Content="OK" HorizontalAlignment="Left" Margin="193,298,0,0" VerticalAlignment="Top" Width="33" Click="Button_Click_10"/>
+            <TextBox x:Name="TextBox1" HorizontalAlignment="Left" Height="23" Margin="69,270,0,0" TextWrapping="Wrap" Text="10.0.10.15" VerticalAlignment="Top" Width="120" ClipToBounds="True" Background="#FF008CC2" BorderBrush="#FF0063B6"/>
+            <Button Content="OK" HorizontalAlignment="Left" Margin="193,270,0,0" VerticalAlignment="Top" Width="33" Click="Button_Click_1" Background="#FF0063B6" BorderThickness="0,1,1,1">
+                <Button.Effect>
+                    <DropShadowEffect Direction="300" ShadowDepth="1"/>
+                </Button.Effect>
+                <Button.BorderBrush>
+                    <SolidColorBrush Color="#FF707070" Opacity="0"/>
+                </Button.BorderBrush>
+            </Button>
+            <TextBox x:Name="TextBox2" HorizontalAlignment="Left" Height="23" Margin="69,298,0,0" TextWrapping="Wrap" Text="10.0.10.15" VerticalAlignment="Top" Width="120" ClipToBounds="True" SelectionBrush="#FF32648B" Background="#FF008CC2" BorderBrush="#FF0063B6"/>
+            <Button Content="OK" HorizontalAlignment="Left" Margin="193,298,0,0" VerticalAlignment="Top" Width="33" Click="Button_Click_10" Background="#FF0063B6" BorderThickness="0,1,1,1">
+                <Button.Effect>
+                    <DropShadowEffect Direction="300" ShadowDepth="1"/>
+                </Button.Effect>
+                <Button.BorderBrush>
+                    <SolidColorBrush Color="#FF707070" Opacity="0"/>
+                </Button.BorderBrush>
+            </Button>
             <Label Content="Ping:" HorizontalAlignment="Left" Margin="34,270,0,0" VerticalAlignment="Top" Height="23" FontSize="9"/>
             <Label Content="Webserver:" HorizontalAlignment="Left" Margin="14,298,0,0" VerticalAlignment="Top" Height="23" FontSize="9"/>
         </Grid>
@@ -54,11 +124,11 @@
                 <RowDefinition Height="34*"/>
                 <RowDefinition Height="131*"/>
             </Grid.RowDefinitions>
-            <Label Content="www.blwvisser.nl" HorizontalAlignment="Left" Margin="10,47,0,0" VerticalAlignment="Top" FontSize="20" Grid.Row="1" Height="37" Width="158"/>
-            <Label Content="BLWVisser B.V." HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="20" Margin="10,10,0,0" Grid.Row="1" Height="37" Width="138"/>
+            <Label Content="www.blwvisser.nl" HorizontalAlignment="Left" Margin="10,47,0,0" VerticalAlignment="Top" FontSize="20" Grid.Row="1" Height="37" Width="224"/>
+            <Label Content="BLWVisser B.V." HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="20" Margin="10,10,0,0" Grid.Row="1" Height="37" Width="224"/>
             <Label Content="Cromhoffsbleekweg 146" HorizontalAlignment="Left" Margin="10,84,0,0" VerticalAlignment="Top" FontSize="20" Grid.Row="1" Height="37" Width="224"/>
-            <Label Content="7513 EW Enschede" HorizontalAlignment="Left" Margin="10,121,0,0" VerticalAlignment="Top" FontSize="20" Grid.Row="1" Height="37" Width="176"/>
-            <Label Content="+31 053 431 9661" HorizontalAlignment="Left" Margin="10,158,0,0" VerticalAlignment="Top" FontSize="20" Grid.Row="1" Height="37" Width="170"/>
+            <Label Content="7513 EW Enschede" HorizontalAlignment="Left" Margin="10,121,0,0" VerticalAlignment="Top" FontSize="20" Grid.Row="1" Height="37" Width="224"/>
+            <Label Content="+31 053 431 9661" HorizontalAlignment="Left" Margin="10,158,0,0" VerticalAlignment="Top" FontSize="20" Grid.Row="1" Height="37" Width="224"/>
             <Image HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Source="BLW Visser Orange sinds scherp.png" Height="56" Width="224"/>
         </Grid>
     </Grid>

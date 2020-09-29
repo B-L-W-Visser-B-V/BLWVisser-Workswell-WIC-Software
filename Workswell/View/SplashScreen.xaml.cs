@@ -2,12 +2,10 @@
  * Lucas Huls © 2020
  * lucashuls.nl
  */
-using PvDotNet;
 using System;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media.Animation;
-using System.Windows.Threading;
 
 namespace WIC_SDK_Sample.View
 {

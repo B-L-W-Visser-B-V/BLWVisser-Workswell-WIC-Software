@@ -14,7 +14,7 @@
             <Setter Property="HorizontalAlignment" Value="Center"/>
         </Style>
     </UserControl.Resources>
-    <Grid>
+    <Grid Background="#FF009CD8">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="Auto"/>
             <ColumnDefinition />
@@ -32,12 +32,26 @@
                     Content="Open"
                     Command="{Binding ThermalSequencePlayerVM.OpenThermalSequenceCommand}"
                     Width="70"
-                    Margin="10,20,10,2"/>
+                    Margin="10,20,10,2" Background="#FF0063B6" BorderThickness="0,1,1,1">
+                <Button.Effect>
+                    <DropShadowEffect Direction="300" ShadowDepth="1"/>
+                </Button.Effect>
+                <Button.BorderBrush>
+                    <SolidColorBrush Color="#FF707070" Opacity="0"/>
+                </Button.BorderBrush>
+            </Button>
             <Button
                     Content="Close"
                     Command="{Binding ThermalSequencePlayerVM.CloseThermalSequenceCommand}"
                     Width="70"
-                    Margin="10,20,10,2"/>
+                    Margin="10,20,10,2" Background="#FF0063B6" BorderThickness="0,1,1,1">
+                <Button.Effect>
+                    <DropShadowEffect Direction="300" ShadowDepth="1"/>
+                </Button.Effect>
+                <Button.BorderBrush>
+                    <SolidColorBrush Color="#FF707070" Opacity="0"/>
+                </Button.BorderBrush>
+            </Button>
         </StackPanel>
 
         <Grid VerticalAlignment="Top"
@@ -235,8 +249,7 @@
             </Grid.RowDefinitions>
             <Image Source="{Binding ThermalSequencePlayerVM.ThermalSequenceImageSource}" 
                    Grid.Row="0" 
-                   Grid.Column="1" 
-                   Grid.RowSpan="2" 
+                   Grid.Column="1"
                    Margin="0,0,0,30"/>
             <Grid Grid.Row="1" 
                   VerticalAlignment="Center" 
