@@ -134,6 +134,9 @@
     <Compile Include="View\ProgressWindow.xaml.cs">
       <DependentUpon>ProgressWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\LoginScreen.xaml.cs">
+      <DependentUpon>LoginScreen.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\SplashScreen.xaml.cs">
       <DependentUpon>SplashScreen.xaml</DependentUpon>
     </Compile>
@@ -158,6 +161,10 @@
     <Page Include="View\ProgressWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\LoginScreen.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="View\SplashScreen.xaml">
       <SubType>Designer</SubType>
@@ -203,9 +210,9 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
-    <Resource Include="View\Workswell-logo-with-slogan-840x180-1.png" />
-    <Resource Include="View\icoon.png" />
-    <Resource Include="View\BLW Visser Orange sinds scherp.png" />
+    <Resource Include="img\Workswell-logo-with-slogan-840x180-1.png" />
+    <Resource Include="img\icoon.png" />
+    <Resource Include="img\BLW Visser Orange sinds scherp.png" />
     <Resource Include="icoon_Wjv_icon.ico" />
     <Content Include="Resources\Multimedia.dll" />
     <Content Include="Resources\PvDotNet.dll" />

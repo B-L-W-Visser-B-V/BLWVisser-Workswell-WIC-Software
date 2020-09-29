@@ -5,13 +5,37 @@
         xmlns:convs="clr-namespace:WIC_SDK_Sample.Utils"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d" x:Class="WIC_SDK_Sample.View.MainWindow"
         Title="BLWVisser" WindowStyle="None" WindowState="Maximized"
-        DataContext="{DynamicResource MainViewModel}" Icon="icoon.png" d:DesignWidth="1145.6" d:DesignHeight="637.6" Background="#FF0063B6" BorderBrush="#FF009CD8">
+        DataContext="{DynamicResource MainViewModel}" Icon="/img/icoon.png" d:DesignWidth="1145.6" d:DesignHeight="637.6" Background="#FF0063B6" BorderBrush="#FF009CD8">
     <Window.Resources>
         <convs:BoolToVisibilityConverter x:Key="BoolToVisConverter" TrueValue="Visible" FalseValue="Collapsed" />
-        <Style TargetType="{x:Type Button}">
-            <Setter Property="Margin" Value="5"/>
-            <Setter Property="VerticalAlignment" Value="Top"/>
-            <Setter Property="HorizontalAlignment" Value="Center"/>
+        <Style TargetType="{x:Type TabItem}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type TabItem}">
+                        <Grid>
+                            <Border 
+                                Name="Border"
+                                Margin="0,0,-4,0" 
+                                Background="#FF0063B6" 
+                                CornerRadius="2,12,0,0" >
+                                <ContentPresenter x:Name="ContentSite"
+                                    VerticalAlignment="Center"
+                                    HorizontalAlignment="Center"
+                                    ContentSource="Header"
+                                    Margin="12,2,12,2"
+                                    RecognizesAccessKey="True"/>
+                            </Border>
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsSelected" Value="True">
+                                <Setter Property="Panel.ZIndex" Value="100" />
+                                <Setter TargetName="Border" Property="Background" Value="#FF009CD8" />
+                                <Setter TargetName="Border" Property="BorderThickness" Value="1,1,1,0" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
         </Style>
     </Window.Resources>
     <Grid>

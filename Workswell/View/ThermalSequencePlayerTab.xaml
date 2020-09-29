@@ -8,10 +8,36 @@
     <UserControl.Resources>
         <vm:ApplicationViewModel x:Key="ApplicationViewModel"/>
         <convs:BoolToVisibilityConverter x:Key="BoolToVisConverter" TrueValue="Visible" FalseValue="Collapsed" />
-        <Style TargetType="Button">
-            <Setter Property="Margin" Value="5"/>
+        <Style TargetType="{x:Type Button}">
+            <Setter Property="Margin" Value="4"/>
             <Setter Property="VerticalAlignment" Value="Top"/>
             <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="Width" Value="90"/>
+            <Setter Property="Height" Value="23"/>
+            <Setter Property="Background" Value="#FF0063B6"/>
+            <Setter Property="BorderBrush" Value="#FF707070"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border Background="{TemplateBinding Background}" BorderBrush="Black" BorderThickness="0">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="Button.Effect">
+                <Setter.Value>
+                    <DropShadowEffect Color="Black" Direction="300" ShadowDepth="1" BlurRadius="5"/>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="#FF008CC2"/>
+                </Trigger>
+                <Trigger Property="IsEnabled" Value="false">
+                    <Setter Property="Background" Value="#FF0063B6"/>
+                </Trigger>
+            </Style.Triggers>
         </Style>
     </UserControl.Resources>
     <Grid Background="#FF009CD8">
@@ -32,26 +58,12 @@
                     Content="Open"
                     Command="{Binding ThermalSequencePlayerVM.OpenThermalSequenceCommand}"
                     Width="70"
-                    Margin="10,20,10,2" Background="#FF0063B6" BorderThickness="0,1,1,1">
-                <Button.Effect>
-                    <DropShadowEffect Direction="300" ShadowDepth="1"/>
-                </Button.Effect>
-                <Button.BorderBrush>
-                    <SolidColorBrush Color="#FF707070" Opacity="0"/>
-                </Button.BorderBrush>
-            </Button>
+                    Margin="10,20,10,2"/>
             <Button
                     Content="Close"
                     Command="{Binding ThermalSequencePlayerVM.CloseThermalSequenceCommand}"
                     Width="70"
-                    Margin="10,20,10,2" Background="#FF0063B6" BorderThickness="0,1,1,1">
-                <Button.Effect>
-                    <DropShadowEffect Direction="300" ShadowDepth="1"/>
-                </Button.Effect>
-                <Button.BorderBrush>
-                    <SolidColorBrush Color="#FF707070" Opacity="0"/>
-                </Button.BorderBrush>
-            </Button>
+                    Margin="10,20,10,2"/>
         </StackPanel>
 
         <Grid VerticalAlignment="Top"
@@ -100,7 +112,7 @@
             <TextBlock Text="Model" Grid.Row="2"/>
             <TextBlock Grid.Row="2" Grid.Column="1" Text="{Binding ThermalSequencePlayerVM.ModelName, FallbackValue='--', TargetNullValue='--'}"/>
             <TextBlock Text="Name" Grid.Row="3"/>
-            <TextBlock Grid.Row="3" Grid.Column="1" Text="{Binding ThermalSequencePlayerVM.UserDefinedName, FallbackValue='--', TargetNullValue='--'}"/>
+            <TextBlock Grid.Row="3" Grid.Column="1" Text="{Binding ThermalSequencePlayerVM.CurrentTime, FallbackValue='--', TargetNullValue='--'}"/>
             <TextBlock Text="Serial number" Grid.Row="4"/>
             <TextBlock Grid.Row="4" Grid.Column="1" Text="{Binding ThermalSequencePlayerVM.SerialNumber, FallbackValue='--', TargetNullValue='--'}"/>
             <TextBlock Grid.Row="5" Text="Emissivity" VerticalAlignment="Center"/>

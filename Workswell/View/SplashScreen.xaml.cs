@@ -31,8 +31,8 @@ namespace WIC_SDK_Sample.View
             {
                 if (pbLoading.Value == 100)
                 {
-                    MainWindow MainWindow = new MainWindow();
-                    MainWindow.Show();
+                    LoginScreen loginScreen = new LoginScreen();
+                    loginScreen.Show();
                     this.Hide();
                 }
             };

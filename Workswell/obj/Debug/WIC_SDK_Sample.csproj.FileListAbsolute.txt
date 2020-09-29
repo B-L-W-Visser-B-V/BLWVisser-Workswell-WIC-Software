@@ -37,3 +37,5 @@ C:\Users\ljhul\Desktop\SDK\blwvisser\Workswell\obj\Debug\BLWVisser Workswell.app
 C:\Users\ljhul\Desktop\SDK\blwvisser\Workswell\obj\Debug\WIC_SDK_Sample.csproj.CopyComplete
 C:\Users\ljhul\Desktop\SDK\blwvisser\Workswell\obj\Debug\BLWVisser Workswell.exe
 C:\Users\ljhul\Desktop\SDK\blwvisser\Workswell\obj\Debug\BLWVisser Workswell.pdb
+C:\Users\ljhul\Desktop\SDK\blwvisser\Workswell\obj\Debug\View\LoginScreen.g.cs
+C:\Users\ljhul\Desktop\SDK\blwvisser\Workswell\obj\Debug\View\LoginScreen.baml

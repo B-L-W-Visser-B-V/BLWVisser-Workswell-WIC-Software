@@ -14,9 +14,9 @@
             <RowDefinition Height="53*"/>
             <RowDefinition Height="28*"/>
         </Grid.RowDefinitions>
-        <Image HorizontalAlignment="Center" Width="410" Source="BLW Visser Orange sinds scherp.png" ClipToBounds="True" Margin="176,0,175.333,52.333" Grid.RowSpan="2"/>
+        <Image HorizontalAlignment="Center" Width="410" Source="/BLWVisser Workswell;component/img/BLW Visser Orange sinds scherp.png" ClipToBounds="True" Margin="176,0,175.333,52.333" Grid.RowSpan="2"/>
         <ProgressBar x:Name="pbLoading" Minimum="0" Maximum="100" Height="32" Width="514" VerticalAlignment="Bottom" HorizontalAlignment="Center" Grid.Row="2" Margin="124,0,123.333,0.333"/>
-        <Image Height="64" Width="210" Source="Workswell-logo-with-slogan-840x180-1.png" RenderTransformOrigin="0.282,0.406" HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Row="1" Grid.RowSpan="2" Margin="276,0.333,275.333,0"/>
+        <Image Height="64" Width="210" Source="/BLWVisser Workswell;component/img/Workswell-logo-with-slogan-840x180-1.png" RenderTransformOrigin="0.282,0.406" HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Row="1" Grid.RowSpan="2" Margin="276,0.333,275.333,0"/>
         <Label Content="www.blwvisser.nl" HorizontalAlignment="Center" Grid.Row="4" VerticalAlignment="Top"/>
     </Grid>
 </Window>

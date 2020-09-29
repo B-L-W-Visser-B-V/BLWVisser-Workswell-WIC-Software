@@ -8,10 +8,36 @@
     <UserControl.Resources>
         <vm:ApplicationViewModel x:Key="ApplicationViewModel"/>
         <convs:BoolToVisibilityConverter x:Key="BoolToVisConverter" TrueValue="Visible" FalseValue="Collapsed" />
-        <Style TargetType="Button">
-            <Setter Property="Margin" Value="5"/>
+        <Style TargetType="{x:Type Button}">
+            <Setter Property="Margin" Value="4"/>
             <Setter Property="VerticalAlignment" Value="Top"/>
             <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="Width" Value="90"/>
+            <Setter Property="Height" Value="23"/>
+            <Setter Property="Background" Value="#FF0063B6"/>
+            <Setter Property="BorderBrush" Value="#FF707070"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border Background="{TemplateBinding Background}" BorderBrush="Black" BorderThickness="0">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="Button.Effect">
+                <Setter.Value>
+                    <DropShadowEffect Color="Black" Direction="300" ShadowDepth="1" BlurRadius="5"/>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="#FF008CC2"/>
+                </Trigger>
+                <Trigger Property="IsEnabled" Value="false">
+                    <Setter Property="Background" Value="#FF0063B6"/>
+                </Trigger>
+            </Style.Triggers>
         </Style>
     </UserControl.Resources>
 
@@ -33,26 +59,12 @@
                     Content="Open"
                     Command="{Binding ThermalImageVM.OpenImageCommand}"
                     Width="70"
-                Margin="10,20,10,2" Background="#FF0063B6" BorderThickness="0,1,1,1">
-                <Button.Effect>
-                    <DropShadowEffect Direction="300" ShadowDepth="1"/>
-                </Button.Effect>
-                <Button.BorderBrush>
-                    <SolidColorBrush Color="#FF707070" Opacity="0"/>
-                </Button.BorderBrush>
-            </Button>
+                Margin="10,20,10,2"/>
             <Button
                     Content="Close"
                     Command="{Binding ThermalImageVM.CloseImageCommand}"
                     Width="70"
-               Margin="10,20,10,2" Background="#FF0063B6" BorderThickness="0,1,1,1">
-                <Button.Effect>
-                    <DropShadowEffect Direction="300" ShadowDepth="1"/>
-                </Button.Effect>
-                <Button.BorderBrush>
-                    <SolidColorBrush Color="#FF707070" Opacity="0"/>
-                </Button.BorderBrush>
-            </Button>
+               Margin="10,20,10,2"/>
         </StackPanel>
 
         <Grid VerticalAlignment="Top"
