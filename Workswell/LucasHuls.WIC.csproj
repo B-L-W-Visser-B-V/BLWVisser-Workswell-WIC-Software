@@ -7,7 +7,7 @@
     <ProjectGuid>{48D04D21-6289-4F83-929B-ED83B010E6AD}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>WIC_SDK_Sample</RootNamespace>
+    <RootNamespace>lucashuls.blwv.WIC</RootNamespace>
     <AssemblyName>BLWVisser Workswell</AssemblyName>
     <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
@@ -28,7 +28,7 @@
     <ProductName>Workswell</ProductName>
     <PublisherName>lucashuls.nl</PublisherName>
     <SuiteName>BLWVisser</SuiteName>
-    <ApplicationRevision>12</ApplicationRevision>
+    <ApplicationRevision>13</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -38,7 +38,7 @@
     <PlatformTarget>x64</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
+    <Optimize>true</Optimize>
     <OutputPath>bin\Debug\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
@@ -59,7 +59,7 @@
     <StartupObject>WIC_SDK_Sample.App</StartupObject>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>icoon_Wjv_icon.ico</ApplicationIcon>
+    <ApplicationIcon>img\icoon_Wjv_icon.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup>
     <SignManifests>false</SignManifests>
@@ -197,13 +197,11 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
     <AppDesigner Include="Properties\" />
-    <None Include="WIC_SDK_Sample_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -213,7 +211,7 @@
     <Resource Include="img\Workswell-logo-with-slogan-840x180-1.png" />
     <Resource Include="img\icoon.png" />
     <Resource Include="img\BLW Visser Orange sinds scherp.png" />
-    <Resource Include="icoon_Wjv_icon.ico" />
+    <Resource Include="img\icoon_Wjv_icon.ico" />
     <Content Include="Resources\Multimedia.dll" />
     <Content Include="Resources\PvDotNet.dll" />
     <Content Include="Resources\ThermoLib.dll" />

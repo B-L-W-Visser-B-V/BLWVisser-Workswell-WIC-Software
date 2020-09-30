@@ -5,7 +5,7 @@ winexe
 C#
 .cs
 C:\Users\ljhul\Desktop\SDK\blwvisser\Workswell\obj\Debug\
-WIC_SDK_Sample
+lucashuls.blwv.WIC
 none
 false
 DEBUG;TRACE
@@ -16,5 +16,5 @@ C:\Users\ljhul\Desktop\SDK\blwvisser\Workswell\App.xaml
 18482801509
 View\InfoTab.xaml;View\CameraTab.xaml;View\MainWindow.xaml;View\ProgressWindow.xaml;View\LoginScreen.xaml;View\SplashScreen.xaml;View\ThermalImageTab.xaml;View\ThermalSequencePlayerTab.xaml;
 
-True
+False
 

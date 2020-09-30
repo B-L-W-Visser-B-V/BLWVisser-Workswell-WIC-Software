@@ -17,18 +17,38 @@ namespace WIC_SDK_Sample.View
         public LoginScreen()
         {
             InitializeComponent();
-        }
 
+            password.PasswordChar = '*';
+        }
+        MainWindow MW = new MainWindow();
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            MainWindow MW = new MainWindow();
-            MW.Show();
-            this.Hide();
+            if (username.Text == "admin")
+            {
+                if (password.Password == "123")
+                {
+                    MW.Show();
+                    this.Hide();
+                }
+                else
+                {
+                    incorrectlogin();
+                }
+            }
+            else
+            {
+                incorrectlogin();
+            }
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             System.Environment.Exit(0);
+        }
+
+        private void incorrectlogin()
+        {
+            MessageBox.Show("FOUT! Probeer opnieuw.");
         }
     }
 }

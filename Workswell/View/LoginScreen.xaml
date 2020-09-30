@@ -8,19 +8,22 @@
         Title="BLWVisser" WindowStyle="None" WindowState="Maximized">
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="196*"/>
-            <ColumnDefinition Width="185*"/>
+            <ColumnDefinition Width="391*"/>
+            <ColumnDefinition Width="371*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="317*"/>
-            <RowDefinition Height="53*"/>
-            <RowDefinition Height="78*"/>
-            <RowDefinition Height="53*"/>
+            <RowDefinition Height="281*"/>
+            <RowDefinition Height="60*"/>
+            <RowDefinition Height="60*"/>
+            <RowDefinition Height="24*"/>
+            <RowDefinition Height="131*"/>
             <RowDefinition Height="28*"/>
         </Grid.RowDefinitions>
-        <Image HorizontalAlignment="Center" Width="410" Source="/BLWVisser Workswell;component/img/BLW Visser Orange sinds scherp.png" ClipToBounds="True" Margin="176,0,175.6,52.6" Grid.RowSpan="2" Grid.ColumnSpan="2"/>
-        <Label Content="www.blwvisser.nl" HorizontalAlignment="Center" Grid.Row="4" VerticalAlignment="Top" Grid.ColumnSpan="2" Margin="331,0.2,331.6,0" Height="26" Width="99"/>
-        <Button Content="Login" HorizontalAlignment="Left" Margin="10,0,0,0" Grid.Row="2" VerticalAlignment="Top" Width="75" Grid.Column="1" Height="19" Click="Button_Click"/>
-        <Button Content="Exit" HorizontalAlignment="Right" Margin="0,0,10,0" Grid.Row="2" VerticalAlignment="Top" Width="75" Height="19" Click="Button_Click_1"/>
+        <Image HorizontalAlignment="Center" Width="410" Source="/BLWVisser Workswell;component/img/BLW Visser Orange sinds scherp.png" ClipToBounds="True" Margin="176,0,175.333,28" Grid.RowSpan="3" Grid.ColumnSpan="2"/>
+        <Label Content="www.blwvisser.nl" HorizontalAlignment="Center" Grid.Row="5" VerticalAlignment="Top" Grid.ColumnSpan="2" Margin="339,0,323.333,0" Height="26" Width="99"/>
+        <Button Content="Login" HorizontalAlignment="Left" Margin="10,0,0,0" Grid.Row="1" VerticalAlignment="Center" Grid.Column="1" Click="Button_Click" FontSize="22" Width="90"/>
+        <Button Content="Exit" HorizontalAlignment="Left" Margin="10,0,0,0" Grid.Row="2" VerticalAlignment="Center" Width="90" Click="Button_Click_1" Grid.Column="1" FontSize="22"/>
+        <TextBox x:Name="username" Margin="0,3.667,9.667,3.333" TextWrapping="Wrap" Text="Username" VerticalAlignment="Center" Width="150" Grid.Row="1" HorizontalAlignment="Right" FontSize="22"/>
+        <PasswordBox x:Name="password" HorizontalAlignment="Right" Margin="0,0,10,0" VerticalAlignment="Center" Grid.Row="2" FontSize="22" Width="150"/>
     </Grid>
 </Window>
