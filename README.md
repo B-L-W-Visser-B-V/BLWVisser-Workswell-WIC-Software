@@ -6,7 +6,7 @@
 <div align="center">
   <p><strong>Menu</strong></p>
 	<br />
-	<a href="https://blwvisser.nl"><strong>Website BLWVisser  »</strong></a>
+	<a href="https://blwvisser.nl"><strong>Website BLWVisser  »</strong></a><br>
 	<a href="https://lucashuls.nl"><strong>Website Lucas Huls  »</strong></a>
 	<br />
 </div>
