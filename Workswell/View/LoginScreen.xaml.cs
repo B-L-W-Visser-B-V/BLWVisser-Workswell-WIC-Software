@@ -3,6 +3,7 @@
  * lucashuls.nl
  */
 using System;
+using System.Media;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media.Animation;
@@ -48,7 +49,8 @@ namespace WIC_SDK_Sample.View
 
         private void incorrectlogin()
         {
-            MessageBox.Show("FOUT! Probeer opnieuw.");
+            SystemSounds.Beep.Play();
+            MessageBox.Show("Gegevens Incorrect! Probeer opnieuw.", "Fout!");
         }
     }
 }

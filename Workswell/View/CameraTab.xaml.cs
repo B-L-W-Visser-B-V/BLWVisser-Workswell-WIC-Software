@@ -20,7 +20,8 @@ namespace WIC_SDK_Sample.View
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            System.Environment.Exit(0);
+            LoginScreen LS = new LoginScreen();
+            LS.Show();
         }
     }
 }

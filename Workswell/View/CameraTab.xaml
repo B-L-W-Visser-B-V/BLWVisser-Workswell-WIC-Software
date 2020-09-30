@@ -89,7 +89,7 @@
                     FontWeight="Bold"
                     Text="Cameras" Height="16" Width="48"/>
                 <Button
-                    Content="Exit"
+                    Content="Logout"
                     Width="70"
                     Margin="75,4,5,0" Grid.ColumnSpan="2" Click="Button_Click" Height="23" VerticalAlignment="Top"/>
                 <Button
