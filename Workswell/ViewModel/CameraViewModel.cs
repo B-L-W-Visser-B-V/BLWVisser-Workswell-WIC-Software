@@ -16,12 +16,13 @@ namespace WIC_SDK_Sample.ViewModel
     // Class for camera with settings and service
     public class CameraViewModel : INotifyPropertyChanged
     {
-        private Camera camera;
-        private CameraCenterViewModel cameraCenterVM;
+
+        public readonly Camera camera;
+        public readonly CameraCenterViewModel cameraCenterVM;
 
         private int nFrame = 0;
 
-        private System.Timers.Timer timer = new System.Timers.Timer();
+        private readonly System.Timers.Timer timer = new System.Timers.Timer();
 
 
         private void ComputeFps(object sender, System.Timers.ElapsedEventArgs e)
@@ -34,7 +35,7 @@ namespace WIC_SDK_Sample.ViewModel
 
         public int Fps
         {
-            get { return fps; }
+            get => fps;
             set
             {
                 fps = value;
@@ -55,7 +56,7 @@ namespace WIC_SDK_Sample.ViewModel
 
             camera.OnNewFrame += camera_OnNewFrame;
 
-            foreach (var lens in camera.AvailableCalibratedLenses)
+            foreach (string lens in camera.AvailableCalibratedLenses)
             {
                 AvailableCalibratedLenses.Add(lens);
             }
@@ -65,7 +66,7 @@ namespace WIC_SDK_Sample.ViewModel
             timer.Start();
         }
 
-        void camera_OnNewFrame(object sender, EventArgs e)
+        private void camera_OnNewFrame(object sender, EventArgs e)
         {
             nFrame++;
             RaiseImage();
@@ -75,147 +76,54 @@ namespace WIC_SDK_Sample.ViewModel
         #region Settings & 
 
         //Manufacturer info
-        public string ManufacturerInfo
-        {
-            get
-            {
-                return camera.ManufacturerInfo;
-            }
-        }
+        public string ManufacturerInfo => camera.ManufacturerInfo;
 
         //Model name
-        public string ModelName
-        {
-            get
-            {
-                return camera.ModelName;
-            }
-        }
+        public string ModelName => camera.ModelName;
 
         // Gets the image timestamp acquired from video converter (Pleora - GevTimestampValue )
-        public long ImageTimestamp
-        {
-            get
-            {
-                return camera.ImageTimestamp;
-            }
-        }
+        public long ImageTimestamp => camera.ImageTimestamp;
 
         // Serial number
-        public string SerialNumber
-        {
-            get
-            {
-                return camera.SerialNumber;
-            }
-        }
+        public string SerialNumber => camera.SerialNumber;
 
         // User-defined device name
-        public string UserDefinedName
-        {
-            get
-            {
-                return camera.UserDefinedName;
-            }
-        }
+        public string UserDefinedName => camera.UserDefinedName;
 
         // Device vendor
-        public string VendorName
-        {
-            get
-            {
-                return camera.VendorName;
-            }
-        }
+        public string VendorName => camera.VendorName;
 
         // Device version
-        public string Version
-        {
-            get
-            {
-                return camera.Version;
-            }
-        }
+        public string Version => camera.Version;
 
         // Device MACaddress (if device is not GEV, then this property is '-')
-        public string MACaddress
-        {
-            get
-            {
-                return camera.MACaddress;
-            }
-        }
+        public string MACaddress => camera.MACaddress;
 
         // Device GUID (if device is not U3V, then this property is '-')
-        public string GUID
-        {
-            get
-            {
-                return camera.GUID;
-            }
-        }
+        public string GUID => camera.GUID;
 
         // Camera is connected
-        public bool IsConnected
-        {
-            get
-            {
-                return camera.IsConnected;
-            }
-        }
+        public bool IsConnected => camera.IsConnected;
 
         // Camera is connected and acquiring data
-        public bool IsAcquiring
-        {
-            get
-            {
-                return camera.IsAcquiring;
-            }
-        }
+        public bool IsAcquiring => camera.IsAcquiring;
 
         // Camera wasnt find in last refresh.
-        public bool IsMissing
-        {
-            get
-            {
-                return camera.IsMissing;
-            }
-        }
+        public bool IsMissing => camera.IsMissing;
 
         // Status of camera
-        public string Status
-        {
-            get
-            {
-                return camera.Status;
-            }
-        }
+        public string Status => camera.Status;
 
-        public bool IsCalibrated
-        {
-            get
-            {
-                return camera.IsCalibrated;
-            }
-        }
+        public bool IsCalibrated => camera.IsCalibrated;
 
-        public bool IsRecording
-        {
-            get
-            {
-                return camera.IsRecordingSequence;
-            }
-        }
+        public bool IsRecording => camera.IsRecordingSequence;
 
         #region All settings of camera
 
         // Emmisivity settings
         public float? Emisivity
         {
-            get
-            {
-                return camera.Emissivity;
-            }
+            get => camera.Emissivity;
             set
             {
                 camera.Emissivity = value;
@@ -226,10 +134,7 @@ namespace WIC_SDK_Sample.ViewModel
         // Reflected temperature settings
         public float? ReflectedTemperature
         {
-            get
-            {
-                return camera.ReflectedTemperature;
-            }
+            get => camera.ReflectedTemperature;
             set
             {
                 camera.ReflectedTemperature = value;
@@ -240,14 +145,8 @@ namespace WIC_SDK_Sample.ViewModel
         // Atmospheric temperature settings
         public float? AtmosphericTemperature
         {
-            get
-            {
-                return camera.AtmosphericTemperature;
-            }
-            set
-            {
-                camera.AtmosphericTemperature = value;
-            }
+            get => camera.AtmosphericTemperature;
+            set => camera.AtmosphericTemperature = value;
         }
 
         /// <summary>
@@ -255,75 +154,32 @@ namespace WIC_SDK_Sample.ViewModel
         /// </summary>
         public float? ExternalOpticsTransmission
         {
-            get
-            {
-                return camera.ExternalOpticsTransmission;
-            }
-            set
-            {
-                camera.ExternalOpticsTransmission = value;
-            }
+            get => camera.ExternalOpticsTransmission;
+            set => camera.ExternalOpticsTransmission = value;
         }
 
         // Humadity settings
         public float? Humidity
         {
-            get
-            {
-                return camera.Humidity;
-            }
-            set
-            {
-                camera.Humidity = value;
-            }
+            get => camera.Humidity;
+            set => camera.Humidity = value;
         }
 
         // Distance settings
         public float? Distance
         {
-            get
-            {
-                return camera.Distance;
-            }
-            set
-            {
-                camera.Distance = value;
-            }
+            get => camera.Distance;
+            set => camera.Distance = value;
         }
 
         // Maximum and minimum temperature
-        public string MaxTemperature
-        {
-            get
-            {
-                return camera.MaxTemperature;
-            }
-        }
-
-        public string MinTemperature
-        {
-            get
-            {
-                return camera.MinTemperature;
-            }
-        }
+        public string MaxTemperature => camera.MaxTemperature;
+        public string MinTemperature => camera.MinTemperature;
 
         // Maximum and minimum temperature
-        public string MaxSignal
-        {
-            get
-            {
-                return camera.MaxSignal;
-            }
-        }
+        public string MaxSignal => camera.MaxSignal;
 
-        public string MinSignal
-        {
-            get
-            {
-                return camera.MinSignal;
-            }
-        }
+        public string MinSignal => camera.MinSignal;
 
         private void RaiseAllSettings()
         {
@@ -347,9 +203,9 @@ namespace WIC_SDK_Sample.ViewModel
             {
                 ObservableCollection<TemperatureRangeViewModel> tempRangesTmp = new ObservableCollection<TemperatureRangeViewModel>();
                 int index = 0;
-                foreach (var range in camera.GetWicTempRanges())
+                foreach (TemperatureRange range in camera.GetWicTempRanges())
                 {
-                    tempRangesTmp.Add(new TemperatureRangeViewModel(new TemperatureRange((int)range.RangeMinC, (int)range.RangeMaxC, index, range.Type)));
+                    tempRangesTmp.Add(new TemperatureRangeViewModel(new TemperatureRange(range.RangeMinC, range.RangeMaxC, index, range.Type)));
                     index++;
                 }
 
@@ -378,11 +234,11 @@ namespace WIC_SDK_Sample.ViewModel
                     {
                         camera.SelectedTempRangeIndex = value.Index;
                         Thread.Sleep(3000);
-                        App.Current.Dispatcher.Invoke((Action)(() =>
+                        App.Current.Dispatcher.Invoke(() =>
                         {
                             ProgressWindow.CloseWindow();
                             RaisePropertyChanged("SelectedTempRange");
-                        }));
+                        });
 
                     }, null);
                 }
@@ -394,7 +250,11 @@ namespace WIC_SDK_Sample.ViewModel
         {
             get
             {
-                if (!IsAcquiring) return null;
+                if (!IsAcquiring)
+                {
+                    return null;
+                }
+
                 return camera.ThermoImageSource;
             }
             set
@@ -406,7 +266,7 @@ namespace WIC_SDK_Sample.ViewModel
         private BitmapSource thermalImage;
 
 
-        private ObservableCollection<string> availablePalettes = new ObservableCollection<string>() { Camera.AvailablePalettes.BlackRed.ToString(),
+        private readonly ObservableCollection<string> availablePalettes = new ObservableCollection<string>() { Camera.AvailablePalettes.BlackRed.ToString(),
             Camera.AvailablePalettes.BlueRed.ToString(),
             Camera.AvailablePalettes.BWRGB.ToString(),
             Camera.AvailablePalettes.Fire.ToString(),
@@ -417,33 +277,25 @@ namespace WIC_SDK_Sample.ViewModel
             Camera.AvailablePalettes.Temperature.ToString(),
             Camera.AvailablePalettes.WBRGB.ToString()};
 
-        public ObservableCollection<string> AvailablePalettes
-        {
-            get
-            {
-                return availablePalettes;
-            }
-        }
+        public ObservableCollection<string> AvailablePalettes => availablePalettes;
 
         //All available generation modes
-        private ObservableCollection<string> availableModes = new ObservableCollection<string>() {
+        private readonly ObservableCollection<string> availableModes = new ObservableCollection<string>() {
             Camera.GenerationModes.Full.ToString(),
             Camera.GenerationModes.Signal.ToString(),
             Camera.GenerationModes.SignalBitmap.ToString()};
-        public ObservableCollection<string> AvailableModes
-        {
-            get
-            {
-                return availableModes;
-            }
-        }
+        public ObservableCollection<string> AvailableModes => availableModes;
 
         //Selected generation mode
         public string SelectedMode
         {
             get
             {
-                if (camera == null) return Camera.GenerationModes.Full.ToString();
+                if (camera == null)
+                {
+                    return Camera.GenerationModes.Full.ToString();
+                }
+
                 return camera.SelectedMode.ToString();
             }
             set
@@ -472,7 +324,11 @@ namespace WIC_SDK_Sample.ViewModel
         {
             get
             {
-                if (camera == null) return Camera.AvailablePalettes.Sepia.ToString();
+                if (camera == null)
+                {
+                    return Camera.AvailablePalettes.Sepia.ToString();
+                }
+
                 return camera.SelectedPalette.ToString();
             }
             set
@@ -518,10 +374,7 @@ namespace WIC_SDK_Sample.ViewModel
 
         public string SelectedLens
         {
-            get
-            {
-                return camera.SelectedLens;
-            }
+            get => camera.SelectedLens;
             set
             {
                 ProgressWindow.OpenWindow("Lens change", "Changing calibration data for lens..");
@@ -535,21 +388,12 @@ namespace WIC_SDK_Sample.ViewModel
             }
         }
 
-        public bool IsAnyCalibratedLens
-        {
-            get
-            {
-                return camera.IsAnyCalibratedLens;
-            }
-        }
+        public bool IsAnyCalibratedLens => camera.IsAnyCalibratedLens;
 
 
         public ObservableCollection<string> AvailableCalibratedLenses
         {
-            get
-            {
-                return availableCalibratedLenses;
-            }
+            get => availableCalibratedLenses;
             set
             {
                 availableCalibratedLenses = value;
@@ -567,26 +411,26 @@ namespace WIC_SDK_Sample.ViewModel
             RaisePropertyChanged("MinSignal");
         }
 
-        void camera_AcquisitionStoped(object sender, EventArgs e)
+        private void camera_AcquisitionStoped(object sender, EventArgs e)
         {
             RaisePropertyChanged("IsAcquiring");
             RaisePropertyChanged("Status");
         }
 
-        void camera_AcquisitionStarted(object sender, EventArgs e)
+        private void camera_AcquisitionStarted(object sender, EventArgs e)
         {
             RaisePropertyChanged("IsAcquiring");
             RaisePropertyChanged("Status");
             RaisePropertyChanged("SelectedPalette");
         }
 
-        void camera_Disconnected(object sender, EventArgs e)
+        private void camera_Disconnected(object sender, EventArgs e)
         {
             RaisePropertyChanged("IsConnected");
             RaisePropertyChanged("Status");
         }
 
-        void camera_Connected(object sender, EventArgs e)
+        private void camera_Connected(object sender, EventArgs e)
         {
             RaiseAllSettings();
             RaisePropertyChanged("IsConnected");
@@ -600,7 +444,7 @@ namespace WIC_SDK_Sample.ViewModel
 
         // Connect command for binding from view
         // Connect the selected camera and load gain modes and framerates modes
-        public ICommand ConnectCommand { get { return new RelayCommand(ConnectCommandExecute, CanConnectCommandExecute); } }
+        public ICommand ConnectCommand => new RelayCommand(ConnectCommandExecute, CanConnectCommandExecute);
         private bool CanConnectCommandExecute()
         {
             return !IsConnected && !IsMissing;
@@ -617,7 +461,7 @@ namespace WIC_SDK_Sample.ViewModel
 
         // Disconnect command for binding from view
         // Disconnect the selected camera
-        public ICommand DisconnectCommand { get { return new RelayCommand(DisconnectCommandExecute, CanDisconnectCommandExecute); } }
+        public ICommand DisconnectCommand => new RelayCommand(DisconnectCommandExecute, CanDisconnectCommandExecute);
         private bool CanDisconnectCommandExecute()
         {
             return IsConnected && !IsAcquiring;
@@ -641,7 +485,7 @@ namespace WIC_SDK_Sample.ViewModel
 
         // Start acquisition command for binding from view
         // Start acquisition of the selected camera
-        public ICommand StartAcquisitionCommand { get { return new RelayCommand(StartAcquisitionCommandExecute, CanStartAcquisitionCommandExecute); } }
+        public ICommand StartAcquisitionCommand => new RelayCommand(StartAcquisitionCommandExecute, CanStartAcquisitionCommandExecute);
         private bool CanStartAcquisitionCommandExecute()
         {
             return !IsAcquiring && IsConnected && !IsMissing;
@@ -661,7 +505,7 @@ namespace WIC_SDK_Sample.ViewModel
 
         // Stop acquisition command for binding from view
         // Stop acquisition of the selected camera
-        public ICommand StopAcquisitionCommand { get { return new RelayCommand(StopAcquisitionCommandExecute, CanStopAcquisitionCommandExecute); } }
+        public ICommand StopAcquisitionCommand => new RelayCommand(StopAcquisitionCommandExecute, CanStopAcquisitionCommandExecute);
         private bool CanStopAcquisitionCommandExecute()
         {
             return IsAcquiring && !IsMissing;
@@ -678,7 +522,7 @@ namespace WIC_SDK_Sample.ViewModel
         }
 
         // Do FFC Correction
-        public ICommand CalibrationCommand { get { return new RelayCommand(CalibrationCommandExecute, CanCalibrationCommandExecute); } }
+        public ICommand CalibrationCommand => new RelayCommand(CalibrationCommandExecute, CanCalibrationCommandExecute);
         private bool CanCalibrationCommandExecute()
         {
             return IsAcquiring && !IsMissing;
@@ -688,7 +532,7 @@ namespace WIC_SDK_Sample.ViewModel
             camera.DoNUC();
         }
 
-        public ICommand SaveImageCommand { get { return new RelayCommand(SaveImageCommandExecute, CanSaveImageCommandExecute); } }
+        public ICommand SaveImageCommand => new RelayCommand(SaveImageCommandExecute, CanSaveImageCommandExecute);
         private bool CanSaveImageCommandExecute()
         {
             return IsConnected && IsAcquiring && !camera.IsSavingImage && !camera.IsRecordingSequence && camera.SelectedMode != Camera.GenerationModes.Signal;
@@ -716,7 +560,7 @@ namespace WIC_SDK_Sample.ViewModel
 
         }
 
-        public ICommand StartRecordingCommand { get { return new RelayCommand(StartRecordingExecute, CanStartRecordingExecute); } }
+        public ICommand StartRecordingCommand => new RelayCommand(StartRecordingExecute, CanStartRecordingExecute);
         private bool CanStartRecordingExecute()
         {
             return IsConnected && IsAcquiring && !camera.IsSavingImage && !camera.IsRecordingSequence && camera.SelectedMode != Camera.GenerationModes.Signal;
@@ -724,7 +568,7 @@ namespace WIC_SDK_Sample.ViewModel
         private void StartRecordingExecute()
         {
             string pathToFile = Environment.GetFolderPath(Environment.SpecialFolder.CommonDocuments);
-            ApplicationViewModel ApplicationVM = System.Windows.Application.Current.Resources["MainViewModel"] as ApplicationViewModel;
+            _ = System.Windows.Application.Current.Resources["MainViewModel"] as ApplicationViewModel;
 
             string filePath;
             string fullPath;
@@ -754,7 +598,7 @@ namespace WIC_SDK_Sample.ViewModel
 
         }
 
-        public ICommand StopRecordingCommand { get { return new RelayCommand(StopRecordingExecute, CanStopRecordingExecute); } }
+        public ICommand StopRecordingCommand => new RelayCommand(StopRecordingExecute, CanStopRecordingExecute);
         private bool CanStopRecordingExecute()
         {
             return IsConnected && IsAcquiring && camera.IsRecordingSequence;

@@ -7,7 +7,7 @@ using System.Windows.Media;
 namespace WIC_SDK_Sample.Utils
 {
     [ClassInterface(ClassInterfaceType.None), ComVisible(false)]
-    public class BoolToStringConverter : BoolConverter<String>
+    public class BoolToStringConverter : BoolConverter<string>
     {
     }
 
@@ -48,14 +48,18 @@ namespace WIC_SDK_Sample.Utils
         public object Convert(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
         {
             if (value == null)
+            {
                 return FalseValue;
+            }
             else
+            {
                 return (bool)value ? TrueValue : FalseValue;
+            }
         }
 
         public object ConvertBack(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
         {
-            return value != null ? value.Equals(TrueValue) : false;
+            return value != null && value.Equals(TrueValue);
         }
     }
 }

@@ -16,7 +16,7 @@ namespace WIC_SDK_Sample.ViewModel
     public class CameraCenterViewModel : INotifyPropertyChanged
     {
 
-        private CameraCenter cameraCenter;
+        private readonly CameraCenter cameraCenter;
 
         public CameraCenterViewModel()
         {
@@ -59,7 +59,7 @@ namespace WIC_SDK_Sample.ViewModel
             {
                 //One of the cameras was removed
                 List<int> removedIndexes = new List<int>();
-                foreach (var Cam in FoundCameras)
+                foreach (CameraViewModel Cam in FoundCameras)
                 {
                     if (cameraCenter.Cameras.Where(x => x.SerialNumber == Cam.SerialNumber).Count() == 0)
                     {
@@ -67,7 +67,7 @@ namespace WIC_SDK_Sample.ViewModel
                     }
                 }
 
-                foreach (var index in removedIndexes)
+                foreach (int index in removedIndexes)
                 {
                     FoundCameras.RemoveAt(index);
                 }
@@ -79,10 +79,7 @@ namespace WIC_SDK_Sample.ViewModel
         private ObservableCollection<CameraViewModel> foundCameras = new ObservableCollection<CameraViewModel>();
         public ObservableCollection<CameraViewModel> FoundCameras
         {
-            get
-            {
-                return foundCameras;
-            }
+            get => foundCameras;
             set
             {
                 foundCameras = value;
@@ -94,10 +91,7 @@ namespace WIC_SDK_Sample.ViewModel
         private CameraViewModel selectedCamera;
         public CameraViewModel SelectedCamera
         {
-            get
-            {
-                return selectedCamera;
-            }
+            get => selectedCamera;
             set
             {
                 selectedCamera = value;
@@ -106,20 +100,14 @@ namespace WIC_SDK_Sample.ViewModel
         }
 
         // Boolean which is used to prevent execute the RefreshCommandExecute before terminates previous execute
-        public bool IsRefreshing
-        {
-            get
-            {
-                return cameraCenter.IsRefreshing;
-            }
-        }
+        public bool IsRefreshing => cameraCenter.IsRefreshing;
         public bool isRefreshing = false;
 
         // Command for clearing cameras in observable collection and again finds the cameras subsequently added to Cameras collection
-        public ICommand RefreshCommand { get { return new RelayCommand(RefreshCommandExecute, CanRefreshCommandExecute); } }
+        public ICommand RefreshCommand => new RelayCommand(RefreshCommandExecute, CanRefreshCommandExecute);
         private bool CanRefreshCommandExecute()
         {
-            foreach (var Cam in FoundCameras)
+            foreach (CameraViewModel Cam in FoundCameras)
             {
                 if (Cam.IsConnected)
                 {

@@ -3,7 +3,6 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:VMs="clr-namespace:WIC_SDK_Sample.ViewModel"
              StartupUri="View/SplashScreen.xaml"
-             DispatcherUnhandledException="Application_DispatcherUnhandledException"
              ShutdownMode="OnMainWindowClose">
 
     <Application.Resources>

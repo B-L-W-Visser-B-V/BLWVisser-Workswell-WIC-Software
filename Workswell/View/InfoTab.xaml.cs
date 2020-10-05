@@ -2,6 +2,7 @@
  * Lucas Huls © 2020
  * lucashuls.nl
  */
+using System;
 using System.Diagnostics;
 using System.Net.NetworkInformation;
 using System.Windows;
@@ -53,8 +54,10 @@ namespace WIC_SDK_Sample.View
 
         private void Button_Click2(object sender, System.Windows.RoutedEventArgs e)
         {
-            ProcessStartInfo start = new ProcessStartInfo();
-            start.FileName = @"C:\Windows\system32\cmd.exe";
+            ProcessStartInfo start = new ProcessStartInfo
+            {
+                FileName = @"C:\Windows\system32\cmd.exe"
+            };
             Process.Start(start);
         }
 
@@ -62,8 +65,10 @@ namespace WIC_SDK_Sample.View
 
         private void Button_Click3(object sender, System.Windows.RoutedEventArgs e)
         {
-            ProcessStartInfo start = new ProcessStartInfo();
-            start.FileName = @"C:\Program Files (x86)\Advanced IP Scanner\advanced_ip_scanner.exe";
+            ProcessStartInfo start = new ProcessStartInfo
+            {
+                FileName = @"C:\Program Files (x86)\Advanced IP Scanner\advanced_ip_scanner.exe"
+            };
             Process.Start(start);
         }
 
@@ -71,8 +76,10 @@ namespace WIC_SDK_Sample.View
 
         private void Button_Click4(object sender, System.Windows.RoutedEventArgs e)
         {
-            ProcessStartInfo start = new ProcessStartInfo();
-            start.FileName = @"C:\blwvisser\TeamViewerQS.exe";
+            ProcessStartInfo start = new ProcessStartInfo
+            {
+                FileName = @"C:\blwvisser\TeamViewerQS.exe"
+            };
             Process.Start(start);
         }
 
@@ -80,8 +87,10 @@ namespace WIC_SDK_Sample.View
 
         private void Button_Click5(object sender, System.Windows.RoutedEventArgs e)
         {
-            ProcessStartInfo start = new ProcessStartInfo();
-            start.FileName = @"C:\Windows\system32\Taskmgr.exe";
+            ProcessStartInfo start = new ProcessStartInfo
+            {
+                FileName = @"C:\Windows\system32\Taskmgr.exe"
+            };
             Process.Start(start);
         }
 
@@ -103,8 +112,10 @@ namespace WIC_SDK_Sample.View
 
         private void Button_Click8(object sender, System.Windows.RoutedEventArgs e)
         {
-            ProcessStartInfo start = new ProcessStartInfo();
-            start.FileName = @"C:\Windows\system32\msinfo32.exe";
+            ProcessStartInfo start = new ProcessStartInfo
+            {
+                FileName = @"C:\Windows\system32\msinfo32.exe"
+            };
             Process.Start(start);
         }
 
@@ -114,6 +125,15 @@ namespace WIC_SDK_Sample.View
         {
             string ip = TextBox2.Text;
             System.Diagnostics.Process.Start("http://" + ip);
+        }
+
+        private void UserControl_Loaded(object sender, RoutedEventArgs e)
+        {
+            username.Text = System.Security.Principal.WindowsIdentity.GetCurrent().Name;
+            network.Text = System.Net.NetworkInformation.NetworkInterface.GetIsNetworkAvailable().ToString();
+            ip.Text = Environment.OSVersion.ToString();
+            user.Text = Environment.UserName.ToString();
+            Tick.Text = Environment.TickCount.ToString();
         }
     }
 }

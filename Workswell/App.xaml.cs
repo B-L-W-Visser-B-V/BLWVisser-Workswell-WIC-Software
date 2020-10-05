@@ -9,11 +9,5 @@ namespace WIC_SDK_Sample
     public partial class App : Application
     {
         public static string ApplicationName = "BLWVisser SAFETIS Workswell";
-
-        private void Application_DispatcherUnhandledException(object sender, System.Windows.Threading.DispatcherUnhandledExceptionEventArgs e)
-        {
-            throw new ApplicationException("Application exception", e.Exception.InnerException);
-        }
-
     }
 }

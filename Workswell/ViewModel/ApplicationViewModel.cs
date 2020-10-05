@@ -8,41 +8,16 @@ namespace WIC_SDK_Sample.ViewModel
     {
 
         //This is the path that is used, when SDK looks for license files. 
-        public string LicenseFilesFolder
-        {
-            get
-            {
-                return Environment.GetFolderPath(Environment.SpecialFolder.CommonDocuments);
-            }
-        }
+        public string LicenseFilesFolder => Environment.GetFolderPath(Environment.SpecialFolder.CommonDocuments);
 
-        private CameraCenterViewModel cameraCenterVM = new CameraCenterViewModel();
-        public CameraCenterViewModel CameraCenterVM
-        {
-            get
-            {
-                return cameraCenterVM;
-            }
+        private readonly CameraCenterViewModel cameraCenterVM = new CameraCenterViewModel();
+        public CameraCenterViewModel CameraCenterVM => cameraCenterVM;
 
-        }
+        private readonly ThermalImageViewModel thermalImageVM = new ThermalImageViewModel();
+        public ThermalImageViewModel ThermalImageVM => thermalImageVM;
 
-        private ThermalImageViewModel thermalImageVM = new ThermalImageViewModel();
-        public ThermalImageViewModel ThermalImageVM
-        {
-            get
-            {
-                return thermalImageVM;
-            }
-        }
-
-        private ThermalSequencePlayerViewModel thermalSequencePlayerVM = new ThermalSequencePlayerViewModel();
-        public ThermalSequencePlayerViewModel ThermalSequencePlayerVM
-        {
-            get
-            {
-                return thermalSequencePlayerVM;
-            }
-        }
+        private readonly ThermalSequencePlayerViewModel thermalSequencePlayerVM = new ThermalSequencePlayerViewModel();
+        public ThermalSequencePlayerViewModel ThermalSequencePlayerVM => thermalSequencePlayerVM;
 
         #region INotifyPropertyChanged Members
 
@@ -55,11 +30,7 @@ namespace WIC_SDK_Sample.ViewModel
         private void RaisePropertyChanged(string propertyName)
         {
             // take a copy to prevent thread issues
-            PropertyChangedEventHandler handler = PropertyChanged;
-            if (handler != null)
-            {
-                handler(this, new PropertyChangedEventArgs(propertyName));
-            }
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
         #endregion
 

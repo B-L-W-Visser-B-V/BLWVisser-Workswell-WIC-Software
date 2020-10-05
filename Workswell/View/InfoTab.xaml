@@ -5,7 +5,7 @@
         xmlns:sdk="clr-namespace:WIC_SDK;assembly=WIC_SDK"
         xmlns:convs="clr-namespace:WIC_SDK_Sample.Utils"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d" x:Class="WIC_SDK_Sample.View.InfoTab"
-        DataContext="{DynamicResource ApplicationViewModel}" Width="1508" d:DesignHeight="814.8"
+        DataContext="{DynamicResource ApplicationViewModel}" Width="1508" d:DesignHeight="814.8" Loaded="UserControl_Loaded"
              >
     <UserControl.Resources>
         <vm:ApplicationViewModel x:Key="ApplicationViewModel"/>
@@ -82,5 +82,16 @@
             <Label Content="+31 053 431 9661" HorizontalAlignment="Left" Margin="10,158,0,0" VerticalAlignment="Top" FontSize="20" Grid.Row="1" Height="37" Width="224"/>
             <Image HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Source="/BLWVisser Workswell;component/img/BLW Visser Orange sinds scherp.png" Height="56" Width="224"/>
         </Grid>
+        <Label Content="Name:" HorizontalAlignment="Left" Margin="1251,404,0,0" VerticalAlignment="Top"/>
+        <Label Content="SCU Info:" HorizontalAlignment="Left" Margin="1234,357,0,0" VerticalAlignment="Top" FontSize="24"/>
+        <TextBlock x:Name="username" HorizontalAlignment="Left" Margin="1296,409,0,0" TextWrapping="Wrap" Text="-" VerticalAlignment="Top"/>
+        <Label Content="Network:" HorizontalAlignment="Left" Margin="1238,430,0,0" VerticalAlignment="Top"/>
+        <TextBlock x:Name="network" HorizontalAlignment="Left" Margin="1296,435,0,0" TextWrapping="Wrap" Text="-" VerticalAlignment="Top"/>
+        <Label Content="OS:" HorizontalAlignment="Left" Margin="1267,456,0,0" VerticalAlignment="Top"/>
+        <TextBlock x:Name="ip" HorizontalAlignment="Left" Margin="1295,461,0,0" TextWrapping="Wrap" Text="-" VerticalAlignment="Top"/>
+        <Label Content="User:" HorizontalAlignment="Left" Margin="1259,482,0,0" VerticalAlignment="Top"/>
+        <TextBlock x:Name="user" HorizontalAlignment="Left" Margin="1296,487,0,0" TextWrapping="Wrap" Text="-" VerticalAlignment="Top"/>
+        <Label Content="Tick:" HorizontalAlignment="Left" Margin="1262,508,0,0" VerticalAlignment="Top"/>
+        <TextBlock x:Name="Tick" HorizontalAlignment="Left" Margin="1295,513,0,0" TextWrapping="Wrap" Text="-" VerticalAlignment="Top"/>
     </Grid>
 </UserControl>

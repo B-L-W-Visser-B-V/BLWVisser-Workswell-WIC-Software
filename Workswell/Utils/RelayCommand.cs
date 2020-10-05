@@ -12,8 +12,8 @@ namespace WIC_SDK_Sample.Utils
 
         #region Declarations
 
-        readonly Predicate<T> _canExecute;
-        readonly Action<T> _execute;
+        private readonly Predicate<T> _canExecute;
+        private readonly Action<T> _execute;
 
         #endregion
 
@@ -35,10 +35,7 @@ namespace WIC_SDK_Sample.Utils
         /// <param name="canExecute">The execution status logic.</param>
         public RelayCommand(Action<T> execute, Predicate<T> canExecute)
         {
-
-            if (execute == null)
-                throw new ArgumentNullException("execute");
-            _execute = execute;
+            _execute = execute ?? throw new ArgumentNullException("execute");
             _canExecute = canExecute;
         }
 
@@ -52,23 +49,27 @@ namespace WIC_SDK_Sample.Utils
             {
 
                 if (_canExecute != null)
+                {
                     CommandManager.RequerySuggested += value;
+                }
             }
             remove
             {
 
                 if (_canExecute != null)
+                {
                     CommandManager.RequerySuggested -= value;
+                }
             }
         }
 
         [DebuggerStepThrough]
-        public Boolean CanExecute(Object parameter)
+        public bool CanExecute(object parameter)
         {
             return _canExecute == null ? true : _canExecute((T)parameter);
         }
 
-        public void Execute(Object parameter)
+        public void Execute(object parameter)
         {
             _execute((T)parameter);
         }
@@ -84,8 +85,8 @@ namespace WIC_SDK_Sample.Utils
 
         #region Declarations
 
-        readonly Func<Boolean> _canExecute;
-        readonly Action _execute;
+        private readonly Func<bool> _canExecute;
+        private readonly Action _execute;
 
         #endregion
 
@@ -105,12 +106,9 @@ namespace WIC_SDK_Sample.Utils
         /// </summary>
         /// <param name="execute">The execution logic.</param>
         /// <param name="canExecute">The execution status logic.</param>
-        public RelayCommand(Action execute, Func<Boolean> canExecute)
+        public RelayCommand(Action execute, Func<bool> canExecute)
         {
-
-            if (execute == null)
-                throw new ArgumentNullException("execute");
-            _execute = execute;
+            _execute = execute ?? throw new ArgumentNullException("execute");
             _canExecute = canExecute;
         }
 
@@ -124,23 +122,27 @@ namespace WIC_SDK_Sample.Utils
             {
 
                 if (_canExecute != null)
+                {
                     CommandManager.RequerySuggested += value;
+                }
             }
             remove
             {
 
                 if (_canExecute != null)
+                {
                     CommandManager.RequerySuggested -= value;
+                }
             }
         }
 
         [DebuggerStepThrough]
-        public Boolean CanExecute(Object parameter)
+        public bool CanExecute(object parameter)
         {
-            return _canExecute == null ? true : _canExecute();
+            return _canExecute == null || _canExecute();
         }
 
-        public void Execute(Object parameter)
+        public void Execute(object parameter)
         {
             _execute();
         }

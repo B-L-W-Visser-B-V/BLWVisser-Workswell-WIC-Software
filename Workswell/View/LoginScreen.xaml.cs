@@ -2,11 +2,8 @@
  * Lucas Huls © 2020
  * lucashuls.nl
  */
-using System;
 using System.Media;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Media.Animation;
 
 namespace WIC_SDK_Sample.View
 {
@@ -21,7 +18,8 @@ namespace WIC_SDK_Sample.View
 
             password.PasswordChar = '*';
         }
-        MainWindow MW = new MainWindow();
+
+        private readonly MainWindow MW = new MainWindow();
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             if (username.Text == "admin")
@@ -29,7 +27,7 @@ namespace WIC_SDK_Sample.View
                 if (password.Password == "123")
                 {
                     MW.Show();
-                    this.Hide();
+                    Hide();
                 }
                 else
                 {

@@ -2,7 +2,6 @@
  * Lucas Huls © 2020
  * lucashuls.nl
  */
-using System;
 using System.Windows;
 
 namespace WIC_SDK_Sample.View
@@ -30,11 +29,11 @@ namespace WIC_SDK_Sample.View
 
         public static void CloseWindow()
         {
-            Application.Current.Dispatcher.Invoke((Action)(() =>
+            Application.Current.Dispatcher.Invoke(() =>
             {
                 Instance.Visibility = Visibility.Hidden;
                 Application.Current.MainWindow.IsEnabled = true;
-            }));
+            });
         }
     }
 }

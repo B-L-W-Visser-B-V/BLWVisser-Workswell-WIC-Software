@@ -5,28 +5,16 @@ namespace WIC_SDK_Sample.ViewModel
 {
     public class TemperatureRangeViewModel : INotifyPropertyChanged
     {
-        private TemperatureRange tempRange;
+        private readonly TemperatureRange tempRange;
 
         public TemperatureRangeViewModel(TemperatureRange tempRange)
         {
             this.tempRange = tempRange;
         }
 
-        public string TemperatureRange
-        {
-            get
-            {
-                return tempRange.Type + ": " + tempRange.RangeMinC.ToString() + " - " + tempRange.RangeMaxC.ToString();
-            }
-        }
+        public string TemperatureRange => tempRange.Type + ": " + tempRange.RangeMinC.ToString() + " - " + tempRange.RangeMaxC.ToString();
 
-        public int Index
-        {
-            get
-            {
-                return tempRange.Index;
-            }
-        }
+        public int Index => tempRange.Index;
 
         #region INotifyPropertyChanged Members
 

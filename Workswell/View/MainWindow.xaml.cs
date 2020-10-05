@@ -32,10 +32,5 @@ namespace WIC_SDK_Sample.View
 
             Process.GetCurrentProcess().Kill();
         }
-
-        private void InfoTab_Loaded(object sender, RoutedEventArgs e)
-        {
-
-        }
     }
 }

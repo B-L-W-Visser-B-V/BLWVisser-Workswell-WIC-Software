@@ -12,13 +12,7 @@ namespace WIC_SDK_Sample.ViewModel
 {
     public class ThermalImageViewModel : INotifyPropertyChanged
     {
-        internal ApplicationViewModel ApplicationViewModel
-        {
-            get
-            {
-                return System.Windows.Application.Current.Resources["MainViewModel"] as ApplicationViewModel;
-            }
-        }
+        internal ApplicationViewModel ApplicationViewModel => System.Windows.Application.Current.Resources["MainViewModel"] as ApplicationViewModel;
 
         // Instance of the Thermogram
         private ThermalImage thermalImage;
@@ -28,7 +22,11 @@ namespace WIC_SDK_Sample.ViewModel
         {
             get
             {
-                if (thermalImage == null) return null;
+                if (thermalImage == null)
+                {
+                    return null;
+                }
+
                 return thermalImage.ThermoImageSource;
             }
             set
@@ -40,7 +38,7 @@ namespace WIC_SDK_Sample.ViewModel
         private BitmapSource thermalImageSource;
 
         // Collection of available palettes
-        private ObservableCollection<string> availablePalettes = new ObservableCollection<string>() {
+        private readonly ObservableCollection<string> availablePalettes = new ObservableCollection<string>() {
             ThermalImage.AvailablePalettes.BlackRed.ToString(),
             ThermalImage.AvailablePalettes.BlueRed.ToString(),
             ThermalImage.AvailablePalettes.BWRGB.ToString(),
@@ -51,20 +49,18 @@ namespace WIC_SDK_Sample.ViewModel
             ThermalImage.AvailablePalettes.Steps.ToString(),
             ThermalImage.AvailablePalettes.Temperature.ToString(),
             ThermalImage.AvailablePalettes.WBRGB.ToString()};
-        public ObservableCollection<string> AvailablePalettes
-        {
-            get
-            {
-                return availablePalettes;
-            }
-        }
+        public ObservableCollection<string> AvailablePalettes => availablePalettes;
 
         // Selected palette
         public string SelectedPalette
         {
             get
             {
-                if (thermalImage == null) return ThermalImage.AvailablePalettes.Sepia.ToString();
+                if (thermalImage == null)
+                {
+                    return ThermalImage.AvailablePalettes.Sepia.ToString();
+                }
+
                 return thermalImage.SelectedPalette.ToString();
             }
             set
@@ -115,10 +111,7 @@ namespace WIC_SDK_Sample.ViewModel
         // Emmisivity settings
         public double? Emisivity
         {
-            get
-            {
-                return thermalImage.ThermalParameters.Emissivity;
-            }
+            get => thermalImage.ThermalParameters.Emissivity;
             set
             {
                 thermalImage.ThermalParameters.Emissivity = value;
@@ -130,10 +123,7 @@ namespace WIC_SDK_Sample.ViewModel
         // Reflected temperature settings
         public double? ReflectedTemperature
         {
-            get
-            {
-                return thermalImage.ThermalParameters.ReflectedTemperature;
-            }
+            get => thermalImage.ThermalParameters.ReflectedTemperature;
             set
             {
                 thermalImage.ThermalParameters.ReflectedTemperature = value;
@@ -145,10 +135,7 @@ namespace WIC_SDK_Sample.ViewModel
         // Atmospheric temperature settings
         public double? AtmosphericTemperature
         {
-            get
-            {
-                return thermalImage.ThermalParameters.AtmosphericTemperature;
-            }
+            get => thermalImage.ThermalParameters.AtmosphericTemperature;
             set
             {
                 thermalImage.ThermalParameters.AtmosphericTemperature = value;
@@ -160,10 +147,7 @@ namespace WIC_SDK_Sample.ViewModel
         // gets or sets the Atmospheric temperature.
         public double? ExternalOpticsTransmission
         {
-            get
-            {
-                return thermalImage.ThermalParameters.ExternalOpticsTransmission;
-            }
+            get => thermalImage.ThermalParameters.ExternalOpticsTransmission;
             set
             {
                 thermalImage.ThermalParameters.ExternalOpticsTransmission = value;
@@ -175,10 +159,7 @@ namespace WIC_SDK_Sample.ViewModel
         // Humidity settings
         public double? Humidity
         {
-            get
-            {
-                return thermalImage.ThermalParameters.RelativeHumidity;
-            }
+            get => thermalImage.ThermalParameters.RelativeHumidity;
             set
             {
                 thermalImage.ThermalParameters.RelativeHumidity = value;
@@ -190,10 +171,7 @@ namespace WIC_SDK_Sample.ViewModel
         // Distance settings
         public double? Distance
         {
-            get
-            {
-                return thermalImage.ThermalParameters.Distance;
-            }
+            get => thermalImage.ThermalParameters.Distance;
             set
             {
                 thermalImage.ThermalParameters.Distance = value;
@@ -203,58 +181,22 @@ namespace WIC_SDK_Sample.ViewModel
         }
 
         // Maximum temperature
-        public string MaxTemperature
-        {
-            get
-            {
-                return thermalImage.MaxTemperatureValue.ToString("f2");
-            }
-        }
+        public string MaxTemperature => thermalImage.MaxTemperatureValue.ToString("f2");
 
         // Minimum temperature
-        public string MinTemperature
-        {
-            get
-            {
-                return thermalImage.MinTemperatureValue.ToString("f2");
-            }
-        }
+        public string MinTemperature => thermalImage.MinTemperatureValue.ToString("f2");
 
         // Manufacturer info
-        public string ManufacturerInfo
-        {
-            get
-            {
-                return thermalImage.Manufacturer;
-            }
-        }
+        public string ManufacturerInfo => thermalImage.Manufacturer;
 
         // Model name
-        public string ModelName
-        {
-            get
-            {
-                return thermalImage.ModelName;
-            }
-        }
+        public string ModelName => thermalImage.ModelName;
 
         // Serial number
-        public string SerialNumber
-        {
-            get
-            {
-                return thermalImage.SerialNumber;
-            }
-        }
+        public string SerialNumber => thermalImage.SerialNumber;
 
         // User-defined device name
-        public string UserDefinedName
-        {
-            get
-            {
-                return thermalImage.Name;
-            }
-        }
+        public string UserDefinedName => thermalImage.Name;
 
         #endregion
 
@@ -291,7 +233,7 @@ namespace WIC_SDK_Sample.ViewModel
         #endregion
 
         // Open command for binding from view. Open the selected thermal image and load parameters.s
-        public ICommand OpenImageCommand { get { return new RelayCommand(OpenImageCommandExecute, CanOpenImageCommandExecute); } }
+        public ICommand OpenImageCommand => new RelayCommand(OpenImageCommandExecute, CanOpenImageCommandExecute);
         private bool CanOpenImageCommandExecute()
         {
             return thermalImage == null;
@@ -327,7 +269,7 @@ namespace WIC_SDK_Sample.ViewModel
         }
 
         // Close command for binding from view. Close the selected thermal image.
-        public ICommand CloseImageCommand { get { return new RelayCommand(CloseImageCommandExecute, CanCloseImageCommandExecute); } }
+        public ICommand CloseImageCommand => new RelayCommand(CloseImageCommandExecute, CanCloseImageCommandExecute);
         private bool CanCloseImageCommandExecute()
         {
             return thermalImage != null;

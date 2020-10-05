@@ -54,7 +54,7 @@
                 <m:ThermalSequencePlayerTab/>
             </TabItem>
             <TabItem Header="Info" Background="#FF009CD8" BorderBrush="#FF009CD8">
-                <m:InfoTab Margin="10,2,11,10" Loaded="InfoTab_Loaded"/>
+                <m:InfoTab Margin="10,2,11,10"/>
             </TabItem>
         </TabControl>
     </Grid>

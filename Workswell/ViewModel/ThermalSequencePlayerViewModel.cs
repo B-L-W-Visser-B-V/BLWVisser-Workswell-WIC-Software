@@ -14,18 +14,12 @@ namespace WIC_SDK_Sample.ViewModel
 {
     public class ThermalSequencePlayerViewModel : INotifyPropertyChanged
     {
-        internal ApplicationViewModel ApplicationViewModel
-        {
-            get
-            {
-                return System.Windows.Application.Current.Resources["MainViewModel"] as ApplicationViewModel;
-            }
-        }
+        internal ApplicationViewModel ApplicationViewModel => System.Windows.Application.Current.Resources["MainViewModel"] as ApplicationViewModel;
 
-        ThermalSequencePlayer thermalSequencePlayer;
+        private ThermalSequencePlayer thermalSequencePlayer;
 
         // Command for opening thermal sequence
-        public ICommand OpenThermalSequenceCommand { get { return new RelayCommand(OpenThermalSequenceCommandExecute, CanOpenThermalSequenceCommandExecute); } }
+        public ICommand OpenThermalSequenceCommand => new RelayCommand(OpenThermalSequenceCommandExecute, CanOpenThermalSequenceCommandExecute);
         private bool CanOpenThermalSequenceCommandExecute()
         {
             return thermalSequencePlayer == null;
@@ -56,7 +50,10 @@ namespace WIC_SDK_Sample.ViewModel
                     }
                     thermalSequencePlayer.RecalculationCompleted += thermalSequencePlayer_RecalculationCompleted;
                     if (thermalSequencePlayer.IsRadiometricSequence && !thermalSequencePlayer.IsRadiometrisSequenceRecalculated)
+                    {
                         ProgressWindow.OpenWindow("Recalculating sequence", "Recalculating...");
+                    }
+
                     RaiseInit();
                     RaiseParameters();
                     RaiseImage();
@@ -66,7 +63,7 @@ namespace WIC_SDK_Sample.ViewModel
         }
 
         // Command for closing thermal sequence
-        public ICommand CloseThermalSequenceCommand { get { return new RelayCommand(CloseThermalSequenceCommandExecute, CanCloseThermalSequenceCommandExecute); } }
+        public ICommand CloseThermalSequenceCommand => new RelayCommand(CloseThermalSequenceCommandExecute, CanCloseThermalSequenceCommandExecute);
         private bool CanCloseThermalSequenceCommandExecute()
         {
             return thermalSequencePlayer != null;
@@ -79,7 +76,7 @@ namespace WIC_SDK_Sample.ViewModel
         }
 
         // Command for getting next frame of thermal sequence
-        public ICommand NextSequenceImageCommand { get { return new RelayCommand(NextSequenceImageCommandExecute, CanNextSequenceImageCommandExecute); } }
+        public ICommand NextSequenceImageCommand => new RelayCommand(NextSequenceImageCommandExecute, CanNextSequenceImageCommandExecute);
         private bool CanNextSequenceImageCommandExecute()
         {
             return thermalSequencePlayer != null && !thermalSequencePlayer.IsPlayingSequence && ((thermalSequencePlayer.IsRadiometricSequence && thermalSequencePlayer.IsRadiometrisSequenceRecalculated) || !thermalSequencePlayer.IsRadiometricSequence);
@@ -91,7 +88,7 @@ namespace WIC_SDK_Sample.ViewModel
         }
 
         // Command for getting previous frame of thermal sequence
-        public ICommand PrevSequenceImageCommand { get { return new RelayCommand(PrevSequenceImageCommandExecute, CanPrevSequenceImageCommandExecute); } }
+        public ICommand PrevSequenceImageCommand => new RelayCommand(PrevSequenceImageCommandExecute, CanPrevSequenceImageCommandExecute);
         private bool CanPrevSequenceImageCommandExecute()
         {
             return thermalSequencePlayer != null && !thermalSequencePlayer.IsPlayingSequence && ((thermalSequencePlayer.IsRadiometricSequence && thermalSequencePlayer.IsRadiometrisSequenceRecalculated) || !thermalSequencePlayer.IsRadiometricSequence);
@@ -103,7 +100,7 @@ namespace WIC_SDK_Sample.ViewModel
         }
 
         // Command for playing thermal sequence
-        public ICommand PlaySequenceImageCommand { get { return new RelayCommand(PlaySequenceImageCommandExecute, CanPlaySequenceImageCommandExecute); } }
+        public ICommand PlaySequenceImageCommand => new RelayCommand(PlaySequenceImageCommandExecute, CanPlaySequenceImageCommandExecute);
         private bool CanPlaySequenceImageCommandExecute()
         {
             return thermalSequencePlayer != null && !thermalSequencePlayer.IsPlayingSequence && ((thermalSequencePlayer.IsRadiometricSequence && thermalSequencePlayer.IsRadiometrisSequenceRecalculated) || !thermalSequencePlayer.IsRadiometricSequence);
@@ -116,7 +113,7 @@ namespace WIC_SDK_Sample.ViewModel
         }
 
         // Command for stopping thermal sequence
-        public ICommand StopSequenceImageCommand { get { return new RelayCommand(StopSequenceImageCommandExecute, CanStopSequenceImageCommandExecute); } }
+        public ICommand StopSequenceImageCommand => new RelayCommand(StopSequenceImageCommandExecute, CanStopSequenceImageCommandExecute);
         private bool CanStopSequenceImageCommandExecute()
         {
             return thermalSequencePlayer != null && thermalSequencePlayer.IsPlayingSequence;
@@ -128,23 +125,23 @@ namespace WIC_SDK_Sample.ViewModel
         }
 
         //Triggered when ImageChanged event occurs
-        void thermalSequencePlayer_ImageChanged(object sender, EventArgs e)
+        private void thermalSequencePlayer_ImageChanged(object sender, EventArgs e)
         {
             RaiseImage();
         }
 
         //Triggered when RecalculationCompleted event occurs
-        void thermalSequencePlayer_RecalculationCompleted(object sender, EventArgs e)
+        private void thermalSequencePlayer_RecalculationCompleted(object sender, EventArgs e)
         {
             RecalculationCompleted = true;
-            App.Current.Dispatcher.Invoke((Action)(() =>
+            App.Current.Dispatcher.Invoke(() =>
             {
                 ProgressWindow.CloseWindow();
-            }));
+            });
         }
 
         //All available palettes
-        private ObservableCollection<string> availablePalettes = new ObservableCollection<string>() {
+        private readonly ObservableCollection<string> availablePalettes = new ObservableCollection<string>() {
             ThermalSequencePlayer.AvailablePalettes.BlackRed.ToString(),
             ThermalSequencePlayer.AvailablePalettes.BlueRed.ToString(),
             ThermalSequencePlayer.AvailablePalettes.BWRGB.ToString(),
@@ -155,20 +152,18 @@ namespace WIC_SDK_Sample.ViewModel
             ThermalSequencePlayer.AvailablePalettes.Steps.ToString(),
             ThermalSequencePlayer.AvailablePalettes.Temperature.ToString(),
             ThermalSequencePlayer.AvailablePalettes.WBRGB.ToString()};
-        public ObservableCollection<string> AvailablePalettes
-        {
-            get
-            {
-                return availablePalettes;
-            }
-        }
+        public ObservableCollection<string> AvailablePalettes => availablePalettes;
 
         //Selected palette
         public string SelectedPalette
         {
             get
             {
-                if (thermalSequencePlayer == null) return ThermalSequencePlayer.AvailablePalettes.Sepia.ToString();
+                if (thermalSequencePlayer == null)
+                {
+                    return ThermalSequencePlayer.AvailablePalettes.Sepia.ToString();
+                }
+
                 return thermalSequencePlayer.SelectedPalette.ToString();
             }
             set
@@ -215,24 +210,22 @@ namespace WIC_SDK_Sample.ViewModel
         }
 
         //All available generation modes
-        private ObservableCollection<string> availableModes = new ObservableCollection<string>() {
+        private readonly ObservableCollection<string> availableModes = new ObservableCollection<string>() {
             ThermalSequencePlayer.GenerationModes.Full.ToString(),
             ThermalSequencePlayer.GenerationModes.Signal.ToString(),
             ThermalSequencePlayer.GenerationModes.SignalBitmap.ToString()};
-        public ObservableCollection<string> AvailableModes
-        {
-            get
-            {
-                return availableModes;
-            }
-        }
+        public ObservableCollection<string> AvailableModes => availableModes;
 
         //Selected generation mode
         public string SelectedMode
         {
             get
             {
-                if (thermalSequencePlayer == null) return ThermalSequencePlayer.GenerationModes.Full.ToString();
+                if (thermalSequencePlayer == null)
+                {
+                    return ThermalSequencePlayer.GenerationModes.Full.ToString();
+                }
+
                 return thermalSequencePlayer.SelectedMode.ToString();
             }
             set
@@ -261,10 +254,7 @@ namespace WIC_SDK_Sample.ViewModel
         //BitmapSource of current frame
         public BitmapSource ThermalSequenceImageSource
         {
-            get
-            {
-                return thermalSequencePlayer.ThermalSequenceSource;
-            }
+            get => thermalSequencePlayer.ThermalSequenceSource;
             set
             {
                 thermalSequenceImageSource = value;
@@ -276,10 +266,7 @@ namespace WIC_SDK_Sample.ViewModel
         //Emissivity
         public double? Emisivity
         {
-            get
-            {
-                return thermalSequencePlayer.ThermalParameters.Emissivity;
-            }
+            get => thermalSequencePlayer.ThermalParameters.Emissivity;
             set
             {
                 thermalSequencePlayer.ThermalParameters.Emissivity = value;
@@ -292,10 +279,7 @@ namespace WIC_SDK_Sample.ViewModel
         //Reflected temperature
         public double? ReflectedTemperature
         {
-            get
-            {
-                return thermalSequencePlayer.ThermalParameters.ReflectedTemperature;
-            }
+            get => thermalSequencePlayer.ThermalParameters.ReflectedTemperature;
             set
             {
                 thermalSequencePlayer.ThermalParameters.ReflectedTemperature = value;
@@ -308,10 +292,7 @@ namespace WIC_SDK_Sample.ViewModel
         //Atmospheric temperature
         public double? AtmosphericTemperature
         {
-            get
-            {
-                return thermalSequencePlayer.ThermalParameters.AtmosphericTemperature;
-            }
+            get => thermalSequencePlayer.ThermalParameters.AtmosphericTemperature;
             set
             {
                 thermalSequencePlayer.ThermalParameters.AtmosphericTemperature = value;
@@ -324,10 +305,7 @@ namespace WIC_SDK_Sample.ViewModel
         //External optics transmission
         public double? ExternalOpticsTransmission
         {
-            get
-            {
-                return thermalSequencePlayer.ThermalParameters.ExternalOpticsTransmission;
-            }
+            get => thermalSequencePlayer.ThermalParameters.ExternalOpticsTransmission;
             set
             {
                 thermalSequencePlayer.ThermalParameters.ExternalOpticsTransmission = value;
@@ -340,10 +318,7 @@ namespace WIC_SDK_Sample.ViewModel
         //Humidity
         public double? Humidity
         {
-            get
-            {
-                return thermalSequencePlayer.ThermalParameters.RelativeHumidity;
-            }
+            get => thermalSequencePlayer.ThermalParameters.RelativeHumidity;
             set
             {
                 thermalSequencePlayer.ThermalParameters.RelativeHumidity = value;
@@ -356,10 +331,7 @@ namespace WIC_SDK_Sample.ViewModel
         //Distance
         public double? Distance
         {
-            get
-            {
-                return thermalSequencePlayer.ThermalParameters.Distance;
-            }
+            get => thermalSequencePlayer.ThermalParameters.Distance;
             set
             {
                 thermalSequencePlayer.ThermalParameters.Distance = value;
@@ -370,94 +342,38 @@ namespace WIC_SDK_Sample.ViewModel
         }
 
         //Maximum temperature
-        public string MaxTemperature
-        {
-            get
-            {
-                return thermalSequencePlayer.MaxTemperatureValue.ToString("f2");
-            }
-        }
+        public string MaxTemperature => thermalSequencePlayer.MaxTemperatureValue.ToString("f2");
 
         //Minimum temperature
-        public string MinTemperature
-        {
-            get
-            {
-                return thermalSequencePlayer.MinTemperatureValue.ToString("f2");
-            }
-        }
+        public string MinTemperature => thermalSequencePlayer.MinTemperatureValue.ToString("f2");
 
         //Maximum signal value
-        public string MaxSignalValue
-        {
-            get
-            {
-                return thermalSequencePlayer.MaxSignalValue.ToString();
-            }
-        }
+        public string MaxSignalValue => thermalSequencePlayer.MaxSignalValue.ToString();
 
         //Minimum signal temperature
-        public string MinSignalValue
-        {
-            get
-            {
-                return thermalSequencePlayer.MinSignalValue.ToString();
-            }
-        }
+        public string MinSignalValue => thermalSequencePlayer.MinSignalValue.ToString();
 
         //Manufacturer info
-        public string ManufacturerInfo
-        {
-            get
-            {
-                return thermalSequencePlayer.Manufacturer;
-            }
-        }
+        public string ManufacturerInfo => thermalSequencePlayer.Manufacturer;
 
         //Model name
-        public string ModelName
-        {
-            get
-            {
-                return thermalSequencePlayer.ModelName;
-            }
-        }
+        public string ModelName => thermalSequencePlayer.ModelName;
 
         //Serial number
-        public string SerialNumber
-        {
-            get
-            {
-                return thermalSequencePlayer.SerialNumber;
-            }
-        }
+        public string SerialNumber => thermalSequencePlayer.SerialNumber;
 
         //Current time
-        public TimeSpan CurrentTime
-        {
-            get
-            {
+        public TimeSpan CurrentTime =>
                 //var x = (thermalSequencePlayer.EndTime.TimeOfDay - thermalSequencePlayer.StartTime.TimeOfDay).ToString();
-                return (thermalSequencePlayer.CurrentTime.TimeOfDay - thermalSequencePlayer.StartTime.TimeOfDay);
-            }
-        }
+                (thermalSequencePlayer.CurrentTime.TimeOfDay - thermalSequencePlayer.StartTime.TimeOfDay);
 
         //End time
-        public TimeSpan EndTime
-        {
-            get
-            {
-                return (thermalSequencePlayer.EndTime.TimeOfDay - thermalSequencePlayer.StartTime.TimeOfDay);
-            }
-        }
+        public TimeSpan EndTime => (thermalSequencePlayer.EndTime.TimeOfDay - thermalSequencePlayer.StartTime.TimeOfDay);
 
         // Loop play
         public bool Loop
         {
-            get
-            {
-                return thermalSequencePlayer.LoopPlay;
-            }
+            get => thermalSequencePlayer.LoopPlay;
             set
             {
                 thermalSequencePlayer.LoopPlay = value;
@@ -466,21 +382,12 @@ namespace WIC_SDK_Sample.ViewModel
         }
 
         // Frame count
-        public int FrameCount
-        {
-            get
-            {
-                return thermalSequencePlayer.FrameCount;
-            }
-        }
+        public int FrameCount => thermalSequencePlayer.FrameCount;
 
         // Current frame index
         public int CurrentFrameIndex
         {
-            get
-            {
-                return thermalSequencePlayer.CurrentFrameIndex;
-            }
+            get => thermalSequencePlayer.CurrentFrameIndex;
             set
             {
                 thermalSequencePlayer.CurrentFrameIndex = value;
@@ -491,10 +398,7 @@ namespace WIC_SDK_Sample.ViewModel
         //Recalculation completed
         public bool RecalculationCompleted
         {
-            get
-            {
-                return recalculationCompleted;
-            }
+            get => recalculationCompleted;
             set
             {
                 recalculationCompleted = value;
