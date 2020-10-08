@@ -33,7 +33,7 @@ namespace WIC_SDK_Sample.View
                 {
                     LoginScreen loginScreen = new LoginScreen();
                     loginScreen.Show();
-                    this.Hide();
+                    Hide();
                 }
             };
             pbLoading.BeginAnimation(ProgressBar.ValueProperty, dblanim);

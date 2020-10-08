@@ -457,6 +457,11 @@ namespace WIC_SDK_Sample.ViewModel
             RaisePropertyChanged("Status");
             RaisePropertyChanged("SelectedTempRange");
             RaisePropertyChanged("SelectedPalette");
+            try
+            {
+                camera.StartAcquisition();
+            }
+            catch { }
         }
 
         // Disconnect command for binding from view
@@ -464,7 +469,7 @@ namespace WIC_SDK_Sample.ViewModel
         public ICommand DisconnectCommand => new RelayCommand(DisconnectCommandExecute, CanDisconnectCommandExecute);
         private bool CanDisconnectCommandExecute()
         {
-            return IsConnected && !IsAcquiring;
+            return IsConnected;
         }
         private void DisconnectCommandExecute()
         {
@@ -475,7 +480,12 @@ namespace WIC_SDK_Sample.ViewModel
             camera.Disconnect();
             RaisePropertyChanged("IsAcquiring");
             RaisePropertyChanged("IsConnected");
-            RaisePropertyChanged("Status");
+            RaisePropertyChanged("Status"); 
+            try
+            {
+                camera.StopAcquisition();
+            }
+            catch { }
         }
 
         public void DisconnectCamera()
@@ -553,7 +563,7 @@ namespace WIC_SDK_Sample.ViewModel
                 if (result == System.Windows.Forms.DialogResult.OK)
                 {
                     filePath = dlg.SelectedPath;
-                    fullPath = filePath + "\\" + DateTime.Now.ToString("HH-mm-ss_dd-MM-yyyy") + ".jpeg";
+                    fullPath = filePath + "\\" + DateTime.Now.ToString("HH-mm-ss_dd-MM-yyyy") + ".png";
                     camera.SaveThermalImage(fullPath);
                 }
             }

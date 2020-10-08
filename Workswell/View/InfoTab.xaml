@@ -28,7 +28,7 @@
                     </ControlTemplate>
                 </Setter.Value>
             </Setter>
-            <Setter Property="Button.Effect">
+            <Setter Property="Effect">
                 <Setter.Value>
                     <DropShadowEffect Color="Black" Direction="300" ShadowDepth="1" BlurRadius="5"/>
                 </Setter.Value>
@@ -39,7 +39,7 @@
                 </Trigger>
             </Style.Triggers>
         </Style>
-        <Style TargetType="TextBlock">
+        <Style TargetType="{x:Type TextBlock}">
             <Setter Property="Margin" Value="4"/>
             <Setter Property="VerticalAlignment" Value="Center"/>
             <Setter Property="HorizontalAlignment" Value="Left"/>

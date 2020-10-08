@@ -3,17 +3,10 @@
  * lucashuls.nl
  */
 using System;
-using System.Diagnostics;
-using System.Net.NetworkInformation;
-using System.Windows;
-using System.Windows.Controls;
-using System.Threading.Tasks;
-using WIC_SDK;
-using WIC_SDK_Sample.ViewModel;
-using System.Net.Mail;
 using System.Net;
-using System.Windows.Forms;
-using System.Windows.Controls.Primitives;
+using System.Net.Mail;
+using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Media;
 
 namespace WIC_SDK_Sample.View
@@ -27,6 +20,8 @@ namespace WIC_SDK_Sample.View
         public CameraTab()
         {
             InitializeComponent();
+            tempalarmstatus.Fill = new SolidColorBrush(Colors.Red);
+            camerastatus.Fill = new SolidColorBrush(Colors.Red);
         }
 
         private void Image_MouseLeftButtonDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
@@ -56,7 +51,7 @@ namespace WIC_SDK_Sample.View
                 {
                     try
                     {
-                        var mail = new MailMessage()
+                        MailMessage mail = new MailMessage()
                         {
                             From = new MailAddress("blwvisser@gmail.com"),
                             Subject = "Temperatuur alarm! | BLW-Visser",
@@ -65,7 +60,7 @@ namespace WIC_SDK_Sample.View
 
                         mail.To.Add(new MailAddress(alarmemail.Text));
 
-                        var client = new SmtpClient()
+                        SmtpClient client = new SmtpClient()
                         {
                             Port = 587,
                             DeliveryMethod = SmtpDeliveryMethod.Network,
@@ -73,7 +68,7 @@ namespace WIC_SDK_Sample.View
                             Host = "smtp.gmail.com",
                             EnableSsl = true,
                             Credentials = new NetworkCredential("blwvisser@gmail.com", "blwv2020")
-                    };     
+                        };
                         client.Send(mail);
                     }
                     catch (Exception ex)
@@ -90,12 +85,24 @@ namespace WIC_SDK_Sample.View
         {
             alarmmaxtemp.IsEnabled = false;
             TempAlarm();
+            tempalarmstatus.Fill = new SolidColorBrush(Colors.Green);
         }
 
         private void alarmswitch_Unchecked(object sender, RoutedEventArgs e)
         {
             alarmmaxtemp.IsEnabled = true;
             TempAlarm();
+            tempalarmstatus.Fill = new SolidColorBrush(Colors.Red);
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            camerastatus.Fill = new SolidColorBrush(Colors.Green);
+        }
+
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            camerastatus.Fill = new SolidColorBrush(Colors.Red);
         }
     }
 }

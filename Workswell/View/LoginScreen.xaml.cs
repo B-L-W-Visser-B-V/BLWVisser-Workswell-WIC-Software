@@ -2,8 +2,11 @@
  * Lucas Huls © 2020
  * lucashuls.nl
  */
+using System;
 using System.Media;
+using System.Runtime.Remoting.Channels;
 using System.Windows;
+using System.Windows.Forms;
 
 namespace WIC_SDK_Sample.View
 {
@@ -26,8 +29,7 @@ namespace WIC_SDK_Sample.View
             {
                 if (password.Password == "123")
                 {
-                    MW.Show();
-                    Hide();
+                    correctlogin();
                 }
                 else
                 {
@@ -48,7 +50,35 @@ namespace WIC_SDK_Sample.View
         private void incorrectlogin()
         {
             SystemSounds.Beep.Play();
-            MessageBox.Show("Gegevens Incorrect! Probeer opnieuw.", "Fout!");
+            System.Windows.Forms.MessageBox.Show("Gegevens Incorrect! Probeer opnieuw.", "Fout!");
+        }
+
+        private void correctlogin()
+        {
+            MW.Show();
+            Hide();
+        }
+
+        private void password_KeyPress(object IChannelSender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == Convert.ToChar(Keys.Return))
+            {
+                if (username.Text == "admin")
+                {
+                    if (password.Password == "123")
+                    {
+                        correctlogin();
+                    }
+                    else
+                    {
+                        incorrectlogin();
+                    }
+                }
+                else
+                {
+                    incorrectlogin();
+                }
+            }
         }
     }
 }

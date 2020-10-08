@@ -18,7 +18,6 @@ namespace WIC_SDK_Sample.View
         public InfoTab()
         {
             InitializeComponent();
-            return;
         }
 
         //Website Button
