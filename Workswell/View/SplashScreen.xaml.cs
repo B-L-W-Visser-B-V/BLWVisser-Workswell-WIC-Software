@@ -3,6 +3,7 @@
  * lucashuls.nl
  */
 using System;
+using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media.Animation;
@@ -20,7 +21,7 @@ namespace WIC_SDK_Sample.View
             Loadprogressbar();
         }
 
-        private void Loadprogressbar()
+        private async void Loadprogressbar()
         {
             pbLoading.Value = 0;
             pbLoading.Maximum = 100;
@@ -37,6 +38,11 @@ namespace WIC_SDK_Sample.View
                 }
             };
             pbLoading.BeginAnimation(ProgressBar.ValueProperty, dblanim);
+            while (pbLoading.IsEnabled == true)
+            {
+                percentage.Text = Math.Round(((pbLoading.Value / pbLoading.Maximum) * 100), 0).ToString() + "%";
+                await Task.Delay(1);
+            }
         }
     }
 }

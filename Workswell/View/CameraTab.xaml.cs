@@ -2,12 +2,17 @@
  * Lucas Huls © 2020
  * lucashuls.nl
  */
+using lucashuls.blwv.WIC.Properties;
 using System;
+using System.Diagnostics;
+using System.Linq;
 using System.Net;
 using System.Net.Mail;
+using System.Net.NetworkInformation;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Media;
+using WIC_SDK;
 
 namespace WIC_SDK_Sample.View
 {
@@ -22,6 +27,7 @@ namespace WIC_SDK_Sample.View
             InitializeComponent();
             tempalarmstatus.Fill = new SolidColorBrush(Colors.Red);
             camerastatus.Fill = new SolidColorBrush(Colors.Red);
+            alarmemail.Text = Settings.Default.alarmemail;
         }
 
         private void Image_MouseLeftButtonDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
@@ -31,14 +37,15 @@ namespace WIC_SDK_Sample.View
 
         public void Button_Click(object sender, RoutedEventArgs e)
         {
-            LoginScreen LS = new LoginScreen();
-            LS.Show();
+            System.Environment.Exit(0);
         }
 
         public async void TempAlarm()
         {
             while (alarmswitch.IsChecked == true)
             {
+                Settings.Default.alarmemail = alarmemail.Text;
+                Settings.Default.Save();
                 string tempstringRaw = maxtemptxt.Text; //String with °C
                 string tempstringC = tempstringRaw.Replace("°C", ""); //String without °C
                 decimal tempdecimal = Math.Round(Convert.ToDecimal(tempstringC), 0); //String to decimal + no numbers after comma

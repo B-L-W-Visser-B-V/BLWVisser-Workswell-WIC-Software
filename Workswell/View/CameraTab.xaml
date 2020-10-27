@@ -65,7 +65,7 @@
         <Grid Grid.Row="0" Grid.Column="0" Margin="0,0,0.667,-0.922" Grid.RowSpan="4">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
-                <RowDefinition Height="*"/>
+
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
@@ -300,7 +300,7 @@
                 <ComboBox 
                     ItemsSource="{Binding CameraCenterVM.SelectedCamera.TempRanges}"
                     SelectedItem="{Binding CameraCenterVM.SelectedCamera.SelectedTempRange, Mode=TwoWay}"
-                    Grid.Row="12" Grid.Column="1" Margin="0,5,0,0" DisplayMemberPath="TemperatureRange" HorizontalAlignment="Left" VerticalAlignment="Center" x:Name="Gain"/>
+                    Grid.Row="12" Grid.Column="1" Margin="0,5,0,0" DisplayMemberPath="TemperatureRange" HorizontalAlignment="Left" VerticalAlignment="Center" x:Name="Gain" SelectedIndex="0"/>
 
                 <TextBlock Grid.Row="13"
                            Text="Palette"
@@ -310,7 +310,7 @@
                     x:Name="PaletteComboBox"
                     ItemsSource="{Binding CameraCenterVM.SelectedCamera.AvailablePalettes}"
                     SelectedItem="{Binding CameraCenterVM.SelectedCamera.SelectedPalette}"
-                    Grid.Row="13" Grid.Column="1" Margin="0,5,0,0" HorizontalAlignment="Left" VerticalAlignment="Center" />
+                    Grid.Row="13" Grid.Column="1" Margin="0,5,0,0" HorizontalAlignment="Left" VerticalAlignment="Center" SelectedIndex="3" />
 
                 <TextBlock Grid.Row="14"
                            Text="Calibrated Lens"
@@ -322,7 +322,7 @@
                     ItemsSource="{Binding CameraCenterVM.SelectedCamera.AvailableCalibratedLenses}"
                     SelectedItem="{Binding CameraCenterVM.SelectedCamera.SelectedLens}"
                     Visibility="{Binding CameraCenterVM.SelectedCamera.IsAnyCalibratedLens, Converter={StaticResource BoolToVisConverter}}"
-                    Grid.Row="14" Grid.Column="1" Margin="0,5,0,0" HorizontalAlignment="Left" VerticalAlignment="Center" />
+                    Grid.Row="14" Grid.Column="1" Margin="0,5,0,0" HorizontalAlignment="Left" VerticalAlignment="Center" SelectedIndex="0" />
                 <TextBlock Grid.Row="15"
                        Text="Computation mode"
                        VerticalAlignment="Center"/>
@@ -335,7 +335,7 @@
                     Grid.Column="1"
                     Margin="0,5,0,0" 
                     HorizontalAlignment="Left" 
-                    VerticalAlignment="Center" />
+                    VerticalAlignment="Center" SelectedIndex="0" />
             </Grid>
         </Grid>
 

@@ -2,6 +2,7 @@
  * Lucas Huls © 2020
  * lucashuls.nl
  */
+using lucashuls.blwv.WIC.Properties;
 using System;
 using System.Media;
 using System.Runtime.Remoting.Channels;
@@ -18,16 +19,15 @@ namespace WIC_SDK_Sample.View
         public LoginScreen()
         {
             InitializeComponent();
-
             password.PasswordChar = '*';
         }
 
         private readonly MainWindow MW = new MainWindow();
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            if (username.Text == "admin")
+            if (username.Text == Settings.Default.username)
             {
-                if (password.Password == "123")
+                if (password.Password == Settings.Default.password)
                 {
                     correctlogin();
                 }
@@ -57,28 +57,6 @@ namespace WIC_SDK_Sample.View
         {
             MW.Show();
             Hide();
-        }
-
-        private void password_KeyPress(object IChannelSender, KeyPressEventArgs e)
-        {
-            if (e.KeyChar == Convert.ToChar(Keys.Return))
-            {
-                if (username.Text == "admin")
-                {
-                    if (password.Password == "123")
-                    {
-                        correctlogin();
-                    }
-                    else
-                    {
-                        incorrectlogin();
-                    }
-                }
-                else
-                {
-                    incorrectlogin();
-                }
-            }
         }
     }
 }

@@ -134,5 +134,10 @@ namespace WIC_SDK_Sample.View
             user.Text = Environment.UserName.ToString();
             Tick.Text = Environment.TickCount.ToString();
         }
+
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            Process.Start(@"c:\temp");
+        }
     }
 }

@@ -4,26 +4,22 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WIC_SDK_Sample.View"
-        mc:Ignorable="d"
-        Title="BLWVisser" WindowStyle="None" WindowState="Maximized">
+        mc:Ignorable="d" WindowStartupLocation="CenterScreen"
+        Title="" WindowStyle="None" WindowState="Normal" Height="200" Width="400" AllowsTransparency="True">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="391*"/>
             <ColumnDefinition Width="371*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="281*"/>
-            <RowDefinition Height="60*"/>
-            <RowDefinition Height="60*"/>
-            <RowDefinition Height="24*"/>
-            <RowDefinition Height="131*"/>
-            <RowDefinition Height="28*"/>
+            <RowDefinition Height="95*"/>
+            <RowDefinition Height="49*"/>
+            <RowDefinition Height="55*"/>
         </Grid.RowDefinitions>
-        <Image HorizontalAlignment="Center" Width="410" Source="/BLWVisser Workswell;component/img/BLW Visser Orange sinds scherp.png" ClipToBounds="True" Margin="176,0,175.333,0" Grid.ColumnSpan="2"/>
-        <Label Content="www.blwvisser.nl" HorizontalAlignment="Center" Grid.Row="5" VerticalAlignment="Top" Grid.ColumnSpan="2" Margin="339,0,323.333,0" Height="26" Width="99"/>
-        <Button Content="Login" HorizontalAlignment="Left" Margin="10,0,0,0" Grid.Row="2" VerticalAlignment="Center" Grid.Column="1" Click="Button_Click" FontSize="22" Width="90"/>
-        <Button Content="Exit" HorizontalAlignment="Left" Margin="10,0,0,0" Grid.Row="1" VerticalAlignment="Center" Width="90" Click="Button_Click_1" Grid.Column="1" FontSize="22"/>
-        <TextBox x:Name="username" Margin="0,3.667,9.667,3.333" TextWrapping="Wrap" Text="admin" VerticalAlignment="Center" Width="150" Grid.Row="1" HorizontalAlignment="Right" FontSize="22"/>
-        <PasswordBox x:Name="password" HorizontalAlignment="Right" Margin="0,0,10,0" VerticalAlignment="Center" Grid.Row="2" FontSize="22" Width="150" Password="123"/>
+        <Image Source="/BLWVisser Workswell;component/img/BLW Visser Orange sinds scherp.png" ClipToBounds="True" Margin="25,0" VerticalAlignment="Center" Height="66" Grid.ColumnSpan="2"/>
+        <Button Content="Login" HorizontalAlignment="Left" Margin="5,5,0,0" Grid.Row="2" VerticalAlignment="Top" Grid.Column="1" Click="Button_Click" FontSize="14" Width="60" Height="25"/>
+        <Button Content="Exit" HorizontalAlignment="Left" Margin="5,0,0,5" VerticalAlignment="Bottom" Width="60" Click="Button_Click_1" Grid.Column="1" FontSize="14" Height="25" Grid.Row="1"/>
+        <TextBox x:Name="username" Margin="0,0,5,5" TextWrapping="Wrap" Text="admin" VerticalAlignment="Bottom" Width="90" Grid.Row="1" HorizontalAlignment="Right" FontSize="14" Height="25"/>
+        <PasswordBox x:Name="password" HorizontalAlignment="Right" Margin="0,5.2,4.6,0" VerticalAlignment="Top" Grid.Row="2" FontSize="14" Width="90" Password="123" Height="25"/>
     </Grid>
 </Window>
