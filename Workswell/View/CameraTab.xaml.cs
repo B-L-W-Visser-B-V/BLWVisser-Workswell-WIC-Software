@@ -4,15 +4,12 @@
  */
 using lucashuls.blwv.WIC.Properties;
 using System;
-using System.Diagnostics;
-using System.Linq;
 using System.Net;
 using System.Net.Mail;
-using System.Net.NetworkInformation;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Forms;
 using System.Windows.Media;
-using WIC_SDK;
 
 namespace WIC_SDK_Sample.View
 {
@@ -37,7 +34,13 @@ namespace WIC_SDK_Sample.View
 
         public void Button_Click(object sender, RoutedEventArgs e)
         {
-            System.Environment.Exit(0);
+            DialogResult dr = System.Windows.Forms.MessageBox.Show("Are you sure?.", "Exit?", MessageBoxButtons.YesNoCancel,
+            MessageBoxIcon.Information);
+
+            if (dr == DialogResult.Yes)
+            {
+                System.Environment.Exit(0);
+            }
         }
 
         public async void TempAlarm()

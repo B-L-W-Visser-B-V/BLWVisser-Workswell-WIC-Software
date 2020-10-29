@@ -70,18 +70,6 @@
             <Label Content="Webserver:" HorizontalAlignment="Left" Margin="14,298,0,0" VerticalAlignment="Top" Height="23" FontSize="9"/>
         </Grid>
         <Label Content="©BLWVisser / Workswell WIC SDK - 2020" HorizontalAlignment="Left" Margin="1251,17.6,0,0" VerticalAlignment="Top" Grid.Row="1" Height="26" Width="227"/>
-        <Grid Margin="10,10,1115,402.4">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="34*"/>
-                <RowDefinition Height="131*"/>
-            </Grid.RowDefinitions>
-            <Label Content="www.blwvisser.nl" HorizontalAlignment="Left" Margin="10,47,0,0" VerticalAlignment="Top" FontSize="20" Grid.Row="1" Height="37" Width="224"/>
-            <Label Content="BLWVisser B.V." HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="20" Margin="10,10,0,0" Grid.Row="1" Height="37" Width="224"/>
-            <Label Content="Cromhoffsbleekweg 146" HorizontalAlignment="Left" Margin="10,84,0,0" VerticalAlignment="Top" FontSize="20" Grid.Row="1" Height="37" Width="224"/>
-            <Label Content="7513 EW Enschede" HorizontalAlignment="Left" Margin="10,121,0,0" VerticalAlignment="Top" FontSize="20" Grid.Row="1" Height="37" Width="224"/>
-            <Label Content="+31 053 431 9661" HorizontalAlignment="Left" Margin="10,158,0,0" VerticalAlignment="Top" FontSize="20" Grid.Row="1" Height="37" Width="224"/>
-            <Image HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Source="/BLWVisser Workswell;component/img/BLW Visser Orange sinds scherp.png" Height="56" Width="224"/>
-        </Grid>
         <Label Content="Name:" HorizontalAlignment="Left" Margin="1251,404,0,0" VerticalAlignment="Top"/>
         <Label Content="SCU Info:" HorizontalAlignment="Left" Margin="1234,357,0,0" VerticalAlignment="Top" FontSize="24"/>
         <TextBlock x:Name="username" HorizontalAlignment="Left" Margin="1296,409,0,0" TextWrapping="Wrap" Text="-" VerticalAlignment="Top"/>
@@ -93,6 +81,5 @@
         <TextBlock x:Name="user" HorizontalAlignment="Left" Margin="1296,487,0,0" TextWrapping="Wrap" Text="-" VerticalAlignment="Top"/>
         <Label Content="Tick:" HorizontalAlignment="Left" Margin="1262,508,0,0" VerticalAlignment="Top"/>
         <TextBlock x:Name="Tick" HorizontalAlignment="Left" Margin="1295,513,0,0" TextWrapping="Wrap" Text="-" VerticalAlignment="Top"/>
-        <Button Content="Settings" HorizontalAlignment="Left" Margin="10,709,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_2"/>
     </Grid>
 </UserControl>

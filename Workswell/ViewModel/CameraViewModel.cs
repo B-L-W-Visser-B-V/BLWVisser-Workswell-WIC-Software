@@ -480,7 +480,7 @@ namespace WIC_SDK_Sample.ViewModel
             camera.Disconnect();
             RaisePropertyChanged("IsAcquiring");
             RaisePropertyChanged("IsConnected");
-            RaisePropertyChanged("Status"); 
+            RaisePropertyChanged("Status");
             try
             {
                 camera.StopAcquisition();

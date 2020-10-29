@@ -3,11 +3,8 @@
  * lucashuls.nl
  */
 using lucashuls.blwv.WIC.Properties;
-using System;
 using System.Media;
-using System.Runtime.Remoting.Channels;
 using System.Windows;
-using System.Windows.Forms;
 
 namespace WIC_SDK_Sample.View
 {
