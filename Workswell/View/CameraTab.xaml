@@ -4,7 +4,6 @@
         xmlns:vm="clr-namespace:WIC_SDK_Sample.ViewModel"
         xmlns:sdk="clr-namespace:WIC_SDK;assembly=WIC_SDK"
         xmlns:convs="clr-namespace:WIC_SDK_Sample.Utils"
-    xmlns:Wpf="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d" x:Class="WIC_SDK_Sample.View.CameraTab"
         DataContext="{DynamicResource ApplicationViewModel}" Width="1508" d:DesignHeight="814.8">
     <UserControl.Resources>

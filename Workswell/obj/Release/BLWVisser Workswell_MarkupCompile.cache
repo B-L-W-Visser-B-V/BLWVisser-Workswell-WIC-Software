@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\ljhul\Desktop\SDK\blwvisser\Workswell\obj\Release\
-WIC_SDK_Sample
+C:\Users\ljhul\Desktop\blwvisser\SDK\blwvisser\Workswell\obj\Release\
+lucashuls.blwv.WIC
 none
 false
 TRACE
-C:\Users\ljhul\Desktop\SDK\blwvisser\Workswell\App.xaml
-71811853628
+C:\Users\ljhul\Desktop\blwvisser\SDK\blwvisser\Workswell\App.xaml
+8-1071104161
 3-1662167436
-19663272995
-18482801509
-View\InfoTab.xaml;View\CameraTab.xaml;View\MainWindow.xaml;View\ProgressWindow.xaml;View\SplashScreen.xaml;View\ThermalImageTab.xaml;View\ThermalSequencePlayerTab.xaml;
+20-1980951984
+191899024320
+View\InfoTab.xaml;View\CameraTab.xaml;View\MainWindow.xaml;View\ProgressWindow.xaml;View\LoginScreen.xaml;View\SplashScreen.xaml;View\ThermalImageTab.xaml;View\ThermalSequencePlayerTab.xaml;
 
 False
 

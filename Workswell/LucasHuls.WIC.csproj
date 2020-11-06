@@ -15,7 +15,7 @@
     <WarningLevel>4</WarningLevel>
     <IsWebBootstrapper>false</IsWebBootstrapper>
     <TargetFrameworkProfile />
-    <PublishUrl>D:\</PublishUrl>
+    <PublishUrl>C:\Users\ljhul\Desktop\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
     <UpdateEnabled>false</UpdateEnabled>
@@ -28,7 +28,7 @@
     <ProductName>Workswell</ProductName>
     <PublisherName>lucashuls.nl</PublisherName>
     <SuiteName>BLWVisser</SuiteName>
-    <ApplicationRevision>24</ApplicationRevision>
+    <ApplicationRevision>26</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -99,9 +99,9 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\WIC_SDK\Resources\ReferencedDlls\ThermoLib.dll</HintPath>
     </Reference>
-    <Reference Include="WIC_SDK, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
+    <Reference Include="WIC_SDK">
       <HintPath>Resources\WIC_SDK.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
     </Reference>
     <Reference Include="WindowsBase" />
     <Reference Include="PresentationCore" />
