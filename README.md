@@ -20,7 +20,7 @@
 
 ## Contact
 <br>
-prive@lucashuls.nl / stg2@blwvisser.nl
+prive@lucashuls.nl
 
 ## Links
 Project Link: [https://github.com/LucasHuls/BLW-Visser-Windows](https://github.com/LucasHuls/BLW-Visser-Windows)
